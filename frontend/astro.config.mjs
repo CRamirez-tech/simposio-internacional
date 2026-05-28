@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://cramirez-tech.github.io',
   outDir: './build',
   base: process.env.VITE_BASE_URL || '/simposio/',
   integrations: [react()],

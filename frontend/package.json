@@ -20,7 +20,7 @@
       },
       "scripts": {
             "predeploy": "npm run build",
-            "deploy": "gh-pages -d dist",
+            "deploy": "gh-pages -d build",
             "dev": "astro dev --host",
             "start": "astro dev",
             "build": "astro build",
