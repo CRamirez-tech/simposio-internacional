@@ -10,6 +10,8 @@ const {
   title = "III Simposio Internacional - Desarrollo e Innovación Empresarial",
   description = "Encuentro de innovación y tecnología más dinámico del macrosur en Arequipa. Conéctate con líderes empresariales, aprende de IA aplicada y conoce beneficios fiscales de SUNAT y CONCYTEC."
 } = Astro.props;
+
+const baseUrl = Astro.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -34,12 +36,12 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.unsa.edu.pe/simposio/" />
-    <meta property="og:image" content="/simposio/og-image.jpg" />
+    <meta property="og:image" content={`${baseUrl}og-image.jpg`} />
     <meta property="og:locale" content="es_PE" />
     
     <!-- Theme Color and Favicons -->
     <meta name="theme-color" content="#030712" />
-    <link rel="icon" type="image/svg+xml" href="/simposio/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
   </head>
   <body class="min-h-screen bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden relative selection:bg-cyan-500 selection:text-white">
     
