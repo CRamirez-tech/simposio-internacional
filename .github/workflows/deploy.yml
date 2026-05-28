@@ -16,6 +16,10 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 
+# Fuerza el uso de Node.js 24 en las acciones para eliminar advertencias de obsolescencia
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
