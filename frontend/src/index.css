@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-violet-850: #3b0764;
+  --color-violet-950: #0b031f;
+  --color-slate-950: #030712;
+  --color-slate-900: #0f172a;
+  --color-slate-850: #1e293b;
+  --color-slate-450: #94a3b8;
+  --color-slate-350: #cbd5e1;
+  
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-outfit: "Outfit", var(--font-sans);
+  
+  --animate-float-slow: float-slow 16s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 20s ease-in-out infinite;
+  --animate-pulse-slow: pulse-slow 10s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
+
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(40px, -60px) scale(1.15); }
+  }
+  @keyframes float-delayed {
+    0%, 100% { transform: translate(0px, 0px) scale(1.1); }
+    50% { transform: translate(-30px, 40px) scale(0.9); }
+  }
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.45; }
+  }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; filter: blur(140px); }
+    50% { opacity: 0.65; filter: blur(160px); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-slate-950);
+  color: var(--color-slate-300);
+}
+
+/* Custom Scrollbar for premium dark style */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2.5px solid #030712;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b0764;
+}

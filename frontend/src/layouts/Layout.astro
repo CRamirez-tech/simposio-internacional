@@ -1,0 +1,70 @@
+---
+import '../index.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title = "III Simposio Internacional - Desarrollo e Innovación Empresarial",
+  description = "Encuentro de innovación y tecnología más dinámico del macrosur en Arequipa. Conéctate con líderes empresariales, aprende de IA aplicada y conoce beneficios fiscales de SUNAT y CONCYTEC."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- SEO Optimization -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.unsa.edu.pe/simposio/" />
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.unsa.edu.pe/simposio/" />
+    <meta property="og:image" content="/simposio/og-image.jpg" />
+    <meta property="og:locale" content="es_PE" />
+    
+    <!-- Theme Color and Favicons -->
+    <meta name="theme-color" content="#030712" />
+    <link rel="icon" type="image/svg+xml" href="/simposio/favicon.svg" />
+  </head>
+  <body class="min-h-screen bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden relative selection:bg-cyan-500 selection:text-white">
+    
+    <!-- ── Ambient Premium Glow Orbs Background ── -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-25 min-h-screen">
+      <!-- Violet pulsing glow, upper left -->
+      <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-violet-850/15 blur-[120px] animate-float-slow"></div>
+      
+      <!-- Cyan pulsing glow, upper right -->
+      <div class="absolute top-[5%] right-[-15%] w-[55vw] h-[55vw] rounded-full bg-cyan-900/10 blur-[130px] animate-float-delayed"></div>
+      
+      <!-- Violet pulsing glow, middle -->
+      <div class="absolute top-[35%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-violet-900/5 blur-[150px] animate-pulse-slow"></div>
+      
+      <!-- Emerald pulsing glow, lower right -->
+      <div class="absolute bottom-[10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-emerald-950/10 blur-[140px] animate-float-slow"></div>
+      
+      <!-- Deep Blue pulsing glow, bottom left -->
+      <div class="absolute bottom-[-15%] left-[-15%] w-[55vw] h-[55vw] rounded-full bg-blue-950/15 blur-[120px] animate-float-delayed"></div>
+    </div>
+
+    <!-- Layout Main Wrapper -->
+    <div class="relative z-10">
+      <slot />
+    </div>
+
+  </body>
+</html>

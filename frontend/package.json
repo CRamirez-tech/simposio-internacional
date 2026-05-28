@@ -1,0 +1,31 @@
+{
+      "name": "simposio",
+      "version": "0.1.0",
+      "private": true,
+      "type": "module",
+      "dependencies": {
+            "@astrojs/react": "^4.2.0",
+            "@tailwindcss/vite": "^4.1.15",
+            "astro": "^5.0.0",
+            "axios": "^1.13.2",
+            "react": "^18.3.1",
+            "react-dom": "^18.3.1"
+      },
+      "devDependencies": {
+            "@types/node": "^20.10.0",
+            "@types/react": "^18.3.12",
+            "@types/react-dom": "^18.3.1",
+            "gh-pages": "^6.3.0",
+            "typescript": "^5.0.0"
+      },
+      "scripts": {
+            "predeploy": "npm run build",
+            "deploy": "gh-pages -d dist",
+            "dev": "astro dev --host",
+            "start": "astro dev",
+            "build": "astro build",
+            "preview": "astro preview",
+            "astro": "astro"
+      },
+      "homepage": "https://cramirez-tech.github.io/simposio/"
+}

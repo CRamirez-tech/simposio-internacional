@@ -1,0 +1,14 @@
+services:
+  # Frontend Vite + React (Servido por Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_BASE_URL: /${FRONTEND_BASE_URL}/
+    container_name: simposio-frontend
+    environment:
+      VITE_BASE_URL: /${FRONTEND_BASE_URL}/
+      VITE_STORAGE_PREFIX: ${STORAGE_PREFIX}
+    ports:
+      - "${FRONTEND_PORT}:80"
+
