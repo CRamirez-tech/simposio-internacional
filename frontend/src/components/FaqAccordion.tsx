@@ -35,7 +35,7 @@ export default function FaqAccordion() {
             key={index} 
             className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
               isOpen 
-                ? "border-violet-500 bg-slate-900/60 shadow-[0_0_20px_-3px_rgba(139,92,246,0.1)]" 
+                ? "border-neon-lime bg-slate-900/60 shadow-[0_0_20px_-3px_rgba(204,255,0,0.1)]" 
                 : "border-slate-800 bg-slate-950/45 hover:border-slate-700"
             }`}
           >
@@ -44,14 +44,14 @@ export default function FaqAccordion() {
               className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
             >
               <span className={`text-sm sm:text-base font-bold transition-colors ${
-                isOpen ? "text-white" : "text-slate-300 hover:text-white"
+                isOpen ? "text-white" : "text-slate-350 hover:text-white"
               }`}>
                 {faq.question}
               </span>
               
               <span className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300 shrink-0 ${
                 isOpen 
-                  ? "rotate-180 border-cyan-500 bg-cyan-950/30 text-cyan-400" 
+                  ? "rotate-180 border-neon-cyan bg-neon-cyan/10 text-neon-cyan" 
                   : "border-slate-800 bg-slate-900 text-slate-400"
               }`}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

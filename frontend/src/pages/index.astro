@@ -74,7 +74,6 @@ const speakers = [
   },
 ];
 
-// Cronograma oficial (según PDF)
 const cronograma = [
   {
     time: "04:00 PM - 04:30 PM",
@@ -87,7 +86,7 @@ const cronograma = [
     time: "04:30 PM - 04:40 PM",
     block: "Protocolo de Apertura",
     title: "Inauguración Oficial del Simposio",
-    detail: "Palabras de bienvenida a cargo del Vicerrector de Investigación de la UNSA y la Directora de la Red Universitaria de Innovación (RUI).",
+    detail: "Palabras de bienvenida a cargo del Vicerrector de Investigación de la UNSA, la Gerencia Regional de Ciencia, Tecnología e Innovación (GORE) y la Directora de la Red Universitaria de Innovación (RUI).",
     glow: "border-slate-800",
   },
   {
@@ -95,35 +94,35 @@ const cronograma = [
     block: "BLOQUE 1: Tecnología e IA",
     title: "Keynote: Inteligencia Artificial Aplicada a los Negocios",
     detail: "Herramientas concretas de IA para automatizar flujos de trabajo, reducir costos operativos directos y potenciar las ventas comerciales de la organización.",
-    glow: "border-blue-500/35 bg-blue-950/10",
+    glow: "border-neon-cyan/20 bg-neon-cyan/5",
   },
   {
     time: "05:10 PM - 05:50 PM",
     block: "BLOQUE 1: Tecnología e IA",
     title: "Panel Empresarial: ¿Qué está funcionando hoy en la empresa local?",
-    detail: "Debate abierto con 4 empresarios líderes de la región que ya han integrado tecnología e IA en sus procesos de negocio. Ronda de preguntas del público.",
-    glow: "border-blue-500/35 bg-blue-950/10",
+    detail: "Debate abierto con empresarios líderes de la región y la Municipalidad Provincial de Arequipa (como panelista invitado) analizando la adopción real de tecnología e IA en los negocios locales.",
+    glow: "border-neon-cyan/20 bg-neon-cyan/5",
   },
   {
     time: "05:50 PM - 06:20 PM",
     block: "BLOQUE 2: Rentabilidad y Mercados",
     title: "Keynote: Modelos de Innovación Replicables y Rentabilidad",
     detail: "Casos de éxito internacionales. Análisis detallado de cómo medianas y grandes empresas transformaron radicalmente su rentabilidad con metodologías replicables.",
-    glow: "border-violet-500/35 bg-violet-950/10",
+    glow: "border-neon-lime/20 bg-neon-lime/5",
   },
   {
     time: "06:20 PM - 06:50 PM",
     block: "BLOQUE 2: Rentabilidad y Mercados",
     title: "Conferencia: Incentivos y Beneficios Tributarios para Innovación",
     detail: "Explicación operativa para acceder a las deducciones de impuestos ante CONCYTEC y SUNAT por inversión en tecnología desde la región Arequipa.",
-    glow: "border-violet-500/35 bg-violet-950/10",
+    glow: "border-neon-lime/20 bg-neon-lime/5",
   },
   {
     time: "06:50 PM - 07:30 PM",
     block: "BLOQUE 2: Rentabilidad y Mercados",
-    title: "Panel Multilaterial: Financiamiento, Mercados Globales y Alianzas",
-    detail: "Panelistas: Representante de CONCYTEC + Empresario Exitoso Regional + Ponente Internacional. Discusión sobre financiamiento corporativo y acceso a mercados internacionales.",
-    glow: "border-violet-500/35 bg-violet-950/10",
+    title: "Panel Multilateral: Financiamiento, Mercados Globales y Alianzas",
+    detail: "Panelistas: Representante de CONCYTEC + Gobierno Regional de Arequipa (GORE) + Empresario Exitoso Regional + Ponente Internacional. Discusión sobre financiamiento corporativo y acceso a mercados internacionales.",
+    glow: "border-neon-lime/20 bg-neon-lime/5",
   },
   {
     time: "07:30 PM - 07:35 PM",
@@ -136,8 +135,8 @@ const cronograma = [
     time: "07:35 PM - 08:00 PM",
     block: "Networking Estructurado",
     title: "Cóctel de Networking Corporativo & Cierre",
-    detail: "Bebidas y bocaditos variados en un ambiente privado. Facilitadores de la UNSA presentarán y conectarán empresarios, ponentes y autoridades para concretar acuerdos e inversión.",
-    glow: "border-cyan-500/35 bg-cyan-950/10",
+    detail: "Bebidas y bocaditos variados en un ambiente privado. Facilitadores de la UNSA presentarán y conectarán empresarios, ponentes y autoridades (incluyendo delegados de la Municipalidad y del GORE) para concretar acuerdos.",
+    glow: "border-neon-cyan/25 bg-neon-cyan/5",
   },
 ];
 ---
@@ -145,17 +144,28 @@ const cronograma = [
 <Layout title="III Simposio Internacional - Desarrollo e Innovación Empresarial">
   
   <!-- Academic Top Banner -->
-  <div class="bg-slate-950/90 border-b border-slate-900 text-[10px] font-black text-slate-400 py-3 relative z-30">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
-      <div class="flex flex-wrap items-center justify-center gap-2">
-        <span class="text-cyan-400 font-extrabold uppercase tracking-widest">Organiza:</span>
-        <span class="text-white font-bold">Universidad Nacional de San Agustín de Arequipa (UNSA)</span>
-        <span class="text-slate-800 hidden md:inline">|</span>
-        <span class="text-slate-350">Dirección de Innovación y Transferencia Tecnológica</span>
+  <div class="bg-white border-b border-slate-200 text-[10px] py-3.5 relative z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col xl:flex-row items-center justify-between gap-3 text-center xl:text-left">
+      <div class="flex flex-wrap items-center justify-center gap-2 text-slate-800 font-bold">
+        <span class="text-[#800020] font-black uppercase tracking-wider">Organiza:</span>
+        <span class="text-slate-900 font-extrabold">Universidad Nacional de San Agustín de Arequipa (UNSA)</span>
+        <span class="text-slate-300 hidden md:inline">|</span>
+        <span class="text-[#800020] font-extrabold">Vicerrectorado de Investigación</span>
+        <span class="text-slate-300 hidden md:inline">|</span>
+        <span class="text-slate-600 font-medium">Dirección de Innovación y Transferencia Tecnológica</span>
       </div>
-      <div class="flex items-center justify-center gap-2">
-        <span class="text-violet-400 font-extrabold uppercase tracking-widest">Co-organizadores:</span>
-        <span class="text-white font-bold">UCSM • UCSP • UPT • UNAM</span>
+      <div class="flex flex-wrap items-center justify-center gap-2 text-slate-700 font-bold">
+        <span class="text-[#800020] font-black uppercase tracking-wider">Co-organizadores:</span>
+        <span class="text-slate-800 font-extrabold">UCSM • UCSP • UPT • UNAM</span>
+        <span class="text-slate-300 hidden md:inline">•</span>
+        <a 
+          href="https://www.facebook.com/p/Gerencia-Regional-de-Ciencia-Tecnolog%C3%ADa-e-Innovaci%C3%B3n-61559188270311/" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="text-blue-600 hover:text-blue-800 font-black hover:underline flex items-center gap-1 transition-all"
+        >
+          GORE Arequipa (Gerencia Regional de Ciencia, Tecnología e Innovación)
+        </a>
       </div>
     </div>
   </div>
@@ -166,16 +176,16 @@ const cronograma = [
       
       <!-- Brand Logo -->
       <a href="#" class="flex items-center space-x-3.5 group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-violet-600 border border-violet-500/30 flex items-center justify-center shadow-lg shadow-violet-950/20 transition-transform duration-300 group-hover:scale-105">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-neon-lime to-neon-cyan border border-neon-lime/30 flex items-center justify-center shadow-lg shadow-cyan-950/20 transition-transform duration-300 group-hover:scale-105">
+          <svg class="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
           </svg>
         </div>
         <div class="flex flex-col text-left">
-          <span class="text-lg font-black font-outfit text-white tracking-tight uppercase leading-none">
-            III Simposio <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-400 to-violet-400">Internacional</span>
+          <span class="text-base sm:text-lg font-black font-outfit text-white tracking-tight uppercase leading-none">
+            III Simposio <span class="bg-clip-text text-transparent bg-neon-lime">Internacional</span>
           </span>
-          <span class="text-[9px] text-slate-500 font-black uppercase tracking-widest mt-1">
+          <span class="text-[8px] sm:text-[9px] text-slate-500 font-black uppercase tracking-widest mt-1">
             Desarrollo Empresarial Arequipa
           </span>
         </div>
@@ -195,7 +205,7 @@ const cronograma = [
       <div class="hidden lg:flex items-center">
         <a 
           href="#register" 
-          class="inline-flex items-center justify-center px-6 h-12 text-xs font-black uppercase tracking-wider rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white hover:opacity-95 shadow-md shadow-violet-950/20 hover:scale-[1.02] active:scale-[0.98] transition-all"
+          class="inline-flex items-center justify-center px-6 h-12 text-xs font-black uppercase tracking-wider rounded-xl bg-neon-lime text-black hover:opacity-95 shadow-md shadow-cyan-950/20 hover:scale-[1.02] active:scale-[0.98] transition-all font-black"
         >
           Postular al Registro
         </a>
@@ -227,7 +237,7 @@ const cronograma = [
       <div class="pt-2">
         <a 
           href="#register" 
-          class="mobile-link w-full inline-flex items-center justify-center px-6 h-12 text-xs font-black uppercase tracking-wider rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 text-white"
+          class="mobile-link w-full inline-flex items-center justify-center px-6 h-12 text-xs font-black uppercase tracking-wider rounded-xl bg-neon-lime text-black font-black"
         >
           Postular al Registro
         </a>
@@ -243,14 +253,14 @@ const cronograma = [
         <!-- Left Content -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-8 animate-[fadeIn_0.6s_ease-out]">
           
-          <div class="inline-flex items-center space-x-2.5 bg-violet-500/10 border border-violet-500/30 px-5 py-2 rounded-full text-[10px] font-black text-violet-300 tracking-widest uppercase shadow-md shadow-violet-950/20">
-            <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+          <div class="inline-flex items-center space-x-2.5 bg-neon-lime/10 border border-neon-lime/30 px-5 py-2 rounded-full text-[10px] font-black text-neon-lime tracking-widest uppercase shadow-md shadow-cyan-950/20">
+            <span class="w-2.5 h-2.5 rounded-full bg-neon-lime animate-ping"></span>
             <span>Encuentro de Innovación y Creadores de Futuro</span>
           </div>
 
           <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-tight text-white leading-[1.08] font-outfit">
             El Futuro de la Innovación:<br />
-            <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-400 animate-pulse-slow">
+            <span class="text-neon-lime">
               Conecta, Aprende y Transforma
             </span>
           </h1>
@@ -262,7 +272,7 @@ const cronograma = [
           <!-- Quick Metadata Bar -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6 border-y border-slate-900 max-w-xl mx-auto lg:mx-0">
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-cyan shrink-0">
                 📅
               </div>
               <div class="text-left">
@@ -272,7 +282,7 @@ const cronograma = [
             </div>
             
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-violet-400 shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-lime shrink-0">
                 ⏰
               </div>
               <div class="text-left">
@@ -282,7 +292,7 @@ const cronograma = [
             </div>
 
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-blue-400 shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-cyan shrink-0">
                 📍
               </div>
               <div class="text-left">
@@ -296,13 +306,13 @@ const cronograma = [
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a 
               href="#register" 
-              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 text-white hover:opacity-95 shadow-xl hover:shadow-violet-950/20 hover:scale-[1.01] active:scale-[0.99] transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-neon-lime text-black hover:opacity-95 shadow-xl hover:shadow-cyan-950/20 hover:scale-[1.01] active:scale-[0.99] transition-all font-black"
             >
               Postular al Registro
             </a>
             <a 
               href="#agenda" 
-              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-slate-900 border border-slate-800 text-slate-350 hover:text-white hover:bg-slate-800 transition-all"
             >
               Ver Programa Oficial
             </a>
@@ -310,51 +320,136 @@ const cronograma = [
 
         </div>
 
-        {/* Right Column: Premium Digital Pass Illustration */}
-        <div class="lg:col-span-5 relative flex justify-center">
-          <div class="absolute inset-0 bg-gradient-to-tr from-violet-600/10 to-cyan-500/10 rounded-3xl blur-2xl -z-10"></div>
+        {/* Right Column: Interactive Flyer Mockup */}
+        <div class="lg:col-span-5 relative flex justify-center w-full">
+          <div class="absolute inset-0 bg-gradient-to-tr from-neon-lime/10 to-neon-cyan/15 rounded-3xl blur-2xl -z-10 animate-pulse-slow"></div>
           
-          <div class="relative w-full max-w-[390px] bg-slate-900/60 backdrop-blur-xl border border-slate-800/80 rounded-3xl p-8 shadow-2xl flex flex-col justify-between overflow-hidden group">
+          <div class="relative w-full max-w-[430px] bg-[#010915] border border-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl flex flex-col justify-between overflow-hidden group hover:border-neon-lime/40 transition-all duration-500 min-h-[550px]">
             
-            {/* Gloss light edge */}
-            <div class="absolute top-[-50px] right-[-50px] w-36 h-36 bg-cyan-400/5 rounded-full blur-2xl group-hover:bg-cyan-400/10 transition-colors duration-500"></div>
+            {/* Mesh background effect */}
+            <div class="absolute inset-0 bg-[radial-gradient(#00f0ff_1.2px,transparent_1.2px)] bg-[size:24px_24px] opacity-15 pointer-events-none"></div>
+            
+            {/* Ambient glows inside flyer card */}
+            <div class="absolute top-1/4 left-1/4 w-32 h-32 bg-neon-cyan/15 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-32 h-32 bg-neon-lime/10 rounded-full blur-2xl pointer-events-none"></div>
 
-            {/* Ticket Header */}
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-[9px] font-black text-violet-400 bg-violet-950/50 border border-violet-850 px-3 py-1 rounded-full uppercase tracking-wider">
-                  Acceso Exclusivo (Gratuito)
-                </span>
-                <span class="text-[10px] text-slate-500 font-bold tracking-widest uppercase">100 Invitados</span>
+            {/* Flyer Content Header */}
+            <div class="text-left space-y-4.5 z-10 relative">
+              
+              {/* Title Section (Matching Flyer Typography) */}
+              <div class="flex items-start gap-4.5">
+                <div class="text-6xl sm:text-[76px] font-black text-neon-lime leading-[0.8] tracking-tighter select-none font-outfit">
+                  III
+                </div>
+                <div class="flex flex-col text-left">
+                  <span class="text-3xl sm:text-[38px] font-black text-white tracking-tight leading-[0.9] font-outfit uppercase">
+                    Simposio
+                  </span>
+                  <span class="text-2xl sm:text-[32px] font-black text-neon-lime tracking-tight leading-[0.9] font-outfit uppercase">
+                    Internacional
+                  </span>
+                </div>
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug font-outfit text-left">
-                III Simposio de Innovación & Desarrollo Empresarial
-              </h3>
-              <p class="text-xs sm:text-sm text-slate-400 font-semibold leading-relaxed text-left">
-                Acompáñanos en una jornada inspiradora diseñada para descubrir casos reales de IA, automatización inteligente e incentivos de innovación de una forma sumamente cercana, interactiva y dinámica.
+              
+              <p class="text-slate-300 font-bold text-xs sm:text-[13px] tracking-wide mt-2 border-l-2 border-neon-lime pl-3.5">
+                Tecnología, innovación y desarrollo empresarial.
               </p>
             </div>
 
-            {/* Features list inside card */}
-            <div class="my-6 bg-slate-950/80 border border-slate-850 rounded-2xl p-4.5 space-y-3.5 shadow-inner">
-              <div class="flex items-center space-x-3 text-xs font-bold text-slate-300 text-left">
-                <span class="text-cyan-400 text-sm">✨</span>
-                <span>Encuentro cercano entre líderes y creadores</span>
+            {/* Flyer Middle: Date & Place (with Lime Icons) */}
+            <div class="my-8 space-y-4.5 z-10 relative">
+              {/* Date */}
+              <div class="flex items-center space-x-4 text-left">
+                <div class="w-11 h-11 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-center shrink-0 shadow-inner group-hover:border-neon-lime/30 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-neon-lime"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                </div>
+                <div>
+                  <div class="text-[9px] text-slate-500 font-black uppercase tracking-widest">Fecha</div>
+                  <div class="text-xs font-black text-white">Miércoles 1 de Julio — 16:00 hrs</div>
+                </div>
               </div>
-              <div class="flex items-center space-x-3 text-xs font-bold text-slate-300 text-left">
-                <span class="text-cyan-400 text-sm">💡</span>
-                <span>Exhibición de Startups de Alto Impacto</span>
-              </div>
-              <div class="flex items-center space-x-3 text-xs font-bold text-slate-300 text-left">
-                <span class="text-cyan-400 text-sm">🍸</span>
-                <span>Cóctel de Networking Estructurado</span>
+
+              {/* Place */}
+              <div class="flex items-center space-x-4 text-left">
+                <div class="w-11 h-11 rounded-xl bg-slate-950/80 border border-slate-800 flex items-center justify-center shrink-0 shadow-inner group-hover:border-neon-lime/30 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-neon-lime"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div>
+                  <div class="text-[9px] text-slate-500 font-black uppercase tracking-widest">Lugar</div>
+                  <div class="text-xs font-black text-white">Cámara de Comercio e Industria - AQP</div>
+                </div>
               </div>
             </div>
 
-            {/* Ticket Footer details */}
-            <div class="flex items-center justify-between pt-4 border-t border-slate-800/80 text-[10px] text-slate-500 font-black uppercase tracking-wider">
-              <span>Formato Presencial</span>
-              <span class="text-cyan-400">CCIA Arequipa</span>
+            {/* Flyer Lower: Próximamente Progress Bar & Slogan */}
+            <div class="space-y-6 pt-6 border-t border-slate-850 z-10 relative text-center">
+              
+              {/* Próximamente Glow text */}
+              <div class="space-y-2.5">
+                <div class="text-[13px] font-black text-neon-cyan uppercase tracking-[0.25em] drop-shadow-[0_0_8px_rgba(0,240,255,0.4)] animate-pulse">
+                  PRÓXIMAMENTE
+                </div>
+                
+                {/* Visual block progress bar */}
+                <div class="w-full max-w-[300px] mx-auto h-7 border border-slate-800/80 rounded-xl p-1 flex gap-1.5 items-center bg-slate-950/80 shadow-inner">
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white rounded-[4px] opacity-90"></div>
+                  <div class="flex-1 h-full bg-white/15 rounded-[4px]"></div>
+                  <div class="flex-1 h-full bg-white/15 rounded-[4px]"></div>
+                  <div class="flex-1 h-full bg-white/15 rounded-[4px]"></div>
+                </div>
+              </div>
+
+              {/* Italic Slogan */}
+              <p class="text-[11px] text-slate-350 font-semibold italic">
+                "Un espacio para innovar, transformar y crecer"
+              </p>
+
+              {/* Social circles */}
+              <div class="flex items-center justify-center gap-3.5 pt-1 text-slate-400">
+                <a 
+                  href="https://www.facebook.com/DITTUNSA" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-9 h-9 rounded-full border border-slate-800 flex items-center justify-center hover:border-neon-lime hover:text-white hover:scale-110 transition-all cursor-pointer bg-slate-950/40"
+                  aria-label="Facebook DITT UNSA"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a 
+                  href="https://www.tiktok.com/@ditt_unsa" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-9 h-9 rounded-full border border-slate-800 flex items-center justify-center hover:border-neon-lime hover:text-white hover:scale-110 transition-all cursor-pointer bg-slate-950/40"
+                  aria-label="TikTok DITT UNSA"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+                </a>
+                <a 
+                  href="https://www.instagram.com/dittunsa/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-9 h-9 rounded-full border border-slate-800 flex items-center justify-center hover:border-neon-lime hover:text-white hover:scale-110 transition-all cursor-pointer bg-slate-950/40"
+                  aria-label="Instagram DITT UNSA"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <a 
+                  href="https://www.youtube.com/@DITTUNSA" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="w-9 h-9 rounded-full border border-slate-800 flex items-center justify-center hover:border-neon-lime hover:text-white hover:scale-110 transition-all cursor-pointer bg-slate-950/40"
+                  aria-label="YouTube DITT UNSA"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17Z"/><polygon points="10 15 15 12 10 9 10 15" fill="currentColor"/></svg>
+                </a>
+              </div>
+
             </div>
 
           </div>
@@ -371,20 +466,20 @@ const cronograma = [
         
         <!-- Left Content -->
         <div class="lg:col-span-6 space-y-6 text-left animate-[fadeIn_0.6s_ease-out]">
-          <span class="text-[10px] font-black text-violet-400 bg-violet-950/50 border border-violet-850 rounded-md px-3.5 py-1.5 w-max block uppercase tracking-widest">
+          <span class="text-[10px] font-black text-neon-lime bg-neon-lime/10 border border-neon-lime/30 rounded-md px-3.5 py-1.5 w-max block uppercase tracking-widest">
             Propósito y Visión
           </span>
           <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-snug font-outfit">
             Un Puente Colaborativo para Crecer Juntos
           </h2>
           <p class="text-slate-350 text-sm sm:text-base font-semibold leading-relaxed">
-            Creemos firmemente en el poder del trabajo en equipo. Este simposio conecta de manera ágil el talento tecnológico de la UNSA y universidades aliadas con la energía y visión de nuestros emprendedores y empresas regionales. Juntos dinamizamos el macrosur, creamos empleo de calidad y abrimos nuevas oportunidades de expansión regional.
+            Creemos firmemente en el poder del trabajo en equipo. Este simposio conecta de manera ágil el talento tecnológico de la UNSA, las universidades aliadas y el Gobierno Regional con la energía y visión de nuestros emprendedores y empresas locales. Juntos dinamizamos el macrosur, creamos empleo de calidad y abrimos nuevas oportunidades de expansión regional.
           </p>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
             <div class="space-y-2.5">
               <div class="text-sm font-black text-white flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-cyan-400 shrink-0"></span>
+                <span class="w-2 h-2 rounded-full bg-neon-cyan shrink-0"></span>
                 <span>Rentabilidad Práctica</span>
               </div>
               <p class="text-xs text-slate-400 leading-relaxed font-semibold">
@@ -393,7 +488,7 @@ const cronograma = [
             </div>
             <div class="space-y-2.5">
               <div class="text-sm font-black text-white flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-violet-400 shrink-0"></span>
+                <span class="w-2 h-2 rounded-full bg-neon-lime shrink-0"></span>
                 <span>Networking Estructurado</span>
               </div>
               <p class="text-xs text-slate-400 leading-relaxed font-semibold">
@@ -410,25 +505,43 @@ const cronograma = [
               <span>🤝</span> Sinergia Regional Coorganizadora
             </h3>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-semibold">
-              Las universidades socias (<strong class="text-white">UCSM, UCSP, UPT y UNAM</strong>) participan con roles técnicos y científicos específicos para elevar la calidad internacional del simposio:
+              Las universidades socias y el gobierno regional participan activamente con roles estratégicos y científicos para elevar el impacto del simposio:
             </p>
             <div class="space-y-4">
               <div class="flex items-start space-x-4">
-                <div class="w-9 h-9 rounded-xl bg-violet-950/80 border border-violet-850 flex items-center justify-center text-violet-400 shrink-0 font-black text-xs">
+                <div class="w-9 h-9 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center text-neon-lime shrink-0 font-black text-xs">
                   A
                 </div>
                 <div>
                   <div class="text-xs font-black text-white">Reclutamiento Científico</div>
-                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">Cada universidad socia recluta y confirma a un ponente internacional de primer nivel tecnológico.</p>
+                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">Cada universidad socia (UCSM, UCSP, UPT y UNAM) recluta y confirma a un ponente internacional de primer nivel tecnológico.</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
-                <div class="w-9 h-9 rounded-xl bg-cyan-950/80 border border-cyan-850 flex items-center justify-center text-cyan-400 shrink-0 font-black text-xs">
+                <div class="w-9 h-9 rounded-xl bg-neon-cyan/10 border border-neon-cyan/20 flex items-center justify-center text-neon-cyan shrink-0 font-black text-xs">
                   B
                 </div>
                 <div>
                   <div class="text-xs font-black text-white">Exhibición de Incubadoras</div>
-                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">Instalación de stands con 2-3 de sus startups tecnológicas de alto impacto listas para ser adoptadas o financiadas.</p>
+                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">Instalación de stands con 2-3 de las startups tecnológicas de alto impacto listas para ser adoptadas o financiadas.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="w-9 h-9 rounded-xl bg-neon-lime/15 border border-neon-lime/30 flex items-center justify-center text-neon-lime shrink-0 font-black text-xs">
+                  C
+                </div>
+                <div>
+                  <div class="text-xs font-black text-white">Articulación CTI Gubernamental (GORE)</div>
+                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">La <a href="https://www.facebook.com/p/Gerencia-Regional-de-Ciencia-Tecnolog%C3%ADa-e-Innovaci%C3%B3n-61559188270311/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 font-bold hover:underline">Gerencia Regional de Ciencia, Tecnología e Innovación (GORE Arequipa)</a> actúa como co-organizador facilitando las políticas y fondos públicos regionales.</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4 border-t border-slate-850 pt-4 mt-2">
+                <div class="w-9 h-9 rounded-xl bg-neon-cyan/15 border border-neon-cyan/35 flex items-center justify-center text-neon-cyan shrink-0 font-black text-xs">
+                  ★
+                </div>
+                <div>
+                  <div class="text-xs font-black text-white">Panelistas e Invitados Especiales</div>
+                  <p class="text-[11px] text-slate-400 leading-normal mt-0.5 font-medium">El <strong class="text-white">Gobierno Regional de Arequipa</strong> y la <strong class="text-white">Municipalidad Provincial de Arequipa</strong> participan formalmente como destacados panelistas en los bloques de debate de desarrollo regional.</p>
                 </div>
               </div>
             </div>
@@ -444,7 +557,7 @@ const cronograma = [
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="text-[10px] font-black text-cyan-400 bg-cyan-950/50 border border-cyan-850 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-widest">
+        <span class="text-[10px] font-black text-neon-lime bg-neon-lime/10 border border-neon-lime/30 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-widest">
           Ejes Científicos y Comerciales
         </span>
         <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-outfit">
@@ -458,14 +571,14 @@ const cronograma = [
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {ejesTematicos.map((eje) => (
           <div class="relative group/card">
-            <div class="absolute -inset-0.5 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl blur opacity-25 group-hover/card:from-violet-500 group-hover/card:to-cyan-400 group-hover/card:opacity-40 transition duration-500"></div>
+            <div class="absolute -inset-0.5 bg-gradient-to-r from-slate-800 to-slate-900 rounded-2xl blur opacity-25 group-hover/card:from-neon-lime group-hover/card:to-neon-cyan group-hover/card:opacity-40 transition duration-500"></div>
             
             <div class="relative bg-slate-900/60 backdrop-blur-md border border-slate-800/80 rounded-2xl p-8 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
               <div class="space-y-4">
-                <span class={`text-[10px] font-black tracking-widest block bg-slate-950/80 border border-slate-850 rounded px-2.5 py-1 w-max text-cyan-400`}>
+                <span class={`text-[10px] font-black tracking-widest block bg-slate-950/80 border border-neon-lime/20 rounded px-2.5 py-1 w-max text-neon-lime`}>
                   EJE {eje.num}
                 </span>
-                <h3 class="text-lg sm:text-xl font-black text-white leading-snug group-hover/card:text-cyan-400 transition-colors duration-300">
+                <h3 class="text-lg sm:text-xl font-black text-white leading-snug group-hover/card:text-neon-lime transition-colors duration-300">
                   {eje.titulo}
                 </h3>
                 <p class="text-slate-400 text-xs sm:text-sm leading-relaxed font-semibold">
@@ -609,71 +722,6 @@ const cronograma = [
     </div>
   </section>
 
-  <!-- Section: Espacio de Incubadoras -->
-  <section id="incubadoras" class="py-24 bg-slate-950/60 border-t border-b border-slate-900 relative">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Content -->
-        <div class="lg:col-span-6 space-y-6 text-left animate-[fadeIn_0.6s_ease-out]">
-          <span class="text-[10px] font-black text-cyan-400 bg-cyan-950/50 border border-cyan-850 rounded-md px-3.5 py-1.5 w-max block uppercase tracking-widest">
-            Espacio de Incubadoras
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-snug font-outfit">
-            Startups de Alto Impacto: Alianzas y Co-Inversión
-          </h2>
-          <p class="text-slate-350 text-sm sm:text-base font-semibold leading-relaxed">
-            Durante el periodo de acreditación (4:00 PM) y en el cóctel de networking de cierre (7:35 PM), las 5 universidades coorganizadoras presentarán una selecta exhibición de startups tecnológicas desarrolladas en sus incubadoras.
-          </p>
-          <div class="space-y-3 pt-2">
-            <div class="flex items-start space-x-3.5">
-              <span class="w-6 h-6 rounded bg-violet-950 border border-violet-900/60 flex items-center justify-center text-violet-400 shrink-0 text-xs font-bold font-mono">1</span>
-              <span class="text-xs sm:text-sm font-semibold text-slate-400">Conozca soluciones tecnológicas reales y listas para ser adoptadas o co-invertidas.</span>
-            </div>
-            <div class="flex items-start space-x-3.5">
-              <span class="w-6 h-6 rounded bg-violet-950 border border-violet-900/60 flex items-center justify-center text-violet-400 shrink-0 text-xs font-bold font-mono">2</span>
-              <span class="text-xs sm:text-sm font-semibold text-slate-400">Conéctese directamente con equipos de innovadores y emprendedores locales de alto nivel.</span>
-            </div>
-            <div class="flex items-start space-x-3.5">
-              <span class="w-6 h-6 rounded bg-violet-950 border border-violet-900/60 flex items-center justify-center text-violet-400 shrink-0 text-xs font-bold font-mono">3</span>
-              <span class="text-xs sm:text-sm font-semibold text-slate-400">Identifique oportunidades de alianza estratégica con proyectos de base científica y tecnológica.</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Content: Rigorous Filtration */}
-        <div class="lg:col-span-6">
-          <div class="bg-slate-900/60 backdrop-blur-md border border-slate-800 rounded-3xl p-8 space-y-6 shadow-xl text-left">
-            <h3 class="text-lg font-black text-white border-b border-slate-850 pb-4">
-              Exhibición Universitaria Rigurosa
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-450 leading-relaxed font-semibold">
-              Cada universidad asociada presentará un máximo de <strong>2 a 3 startups de base tecnológica</strong> seleccionadas bajo rigurosos criterios de viabilidad empresarial.
-            </p>
-            <div class="bg-slate-950/80 border border-slate-850 rounded-2xl p-5 space-y-3.5 shadow-inner">
-              <h4 class="text-xs font-black text-cyan-400 uppercase tracking-widest">Filtro de Selección de Proyectos:</h4>
-              <ul class="space-y-2 text-xs text-slate-400 font-semibold">
-                <li class="flex items-center space-x-2.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                  <span>Aplicación empresarial directa e inmediata de la solución.</span>
-                </li>
-                <li class="flex items-center space-x-2.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                  <span>No se permiten proyectos académicos de fase inicial o teóricos.</span>
-                </li>
-                <li class="flex items-center space-x-2.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0"></span>
-                  <span>Modelos validados con potencial de escalabilidad regional.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
   <!-- Interactive Component: Formulario de Registro -->
   <section id="register" class="py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -703,14 +751,28 @@ const cronograma = [
   <footer class="bg-slate-950 py-16 text-xs text-slate-500 border-t border-slate-900 relative z-30">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 items-center text-center md:text-left">
       
-      <div class="space-y-2">
+      <div class="space-y-3.5">
         <span class="text-sm font-black text-white font-outfit uppercase tracking-tight">
-          III Simposio <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-violet-400">Internacional</span>
+          III Simposio <span class="bg-clip-text text-transparent bg-neon-lime">Internacional</span>
         </span>
         <p class="text-[10px] text-slate-500 font-semibold leading-relaxed">
           Dirección de Innovación y Transferencia Tecnológica - UNSA.<br />
           Articulando la Academia con el Desarrollo Regional Arequipa.
         </p>
+        <div class="flex items-center justify-center md:justify-start gap-3.5 pt-1 text-slate-500">
+          <a href="https://www.facebook.com/DITTUNSA" target="_blank" rel="noopener noreferrer" class="hover:text-neon-lime hover:scale-110 transition-all" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@ditt_unsa" target="_blank" rel="noopener noreferrer" class="hover:text-neon-lime hover:scale-110 transition-all" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+          </a>
+          <a href="https://www.instagram.com/dittunsa/" target="_blank" rel="noopener noreferrer" class="hover:text-neon-lime hover:scale-110 transition-all" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@DITTUNSA" target="_blank" rel="noopener noreferrer" class="hover:text-neon-lime hover:scale-110 transition-all" aria-label="YouTube">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17Z"/><polygon points="10 15 15 12 10 9 10 15" fill="currentColor"/></svg>
+          </a>
+        </div>
       </div>
 
       <p class="text-[10px] text-slate-500 leading-relaxed max-w-sm mx-auto font-medium">

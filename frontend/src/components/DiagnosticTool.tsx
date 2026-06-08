@@ -50,24 +50,24 @@ export default function DiagnosticTool() {
       return {
         level: "Líder Tecnológico / Avanzado",
         desc: "¡Excelente! Su empresa cuenta con una sólida base innovadora. Le recomendamos asistir principalmente al Bloque 2 del Simposio (05:50 PM - 07:30 PM) para afinar estrategias avanzadas de escalamiento regional, financiamiento multilateral e internacionalización comercial.",
-        badgeColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/30",
-        glowColor: "shadow-emerald-500/10",
+        badgeColor: "bg-neon-lime/10 text-neon-lime border-neon-lime/30",
+        glowColor: "shadow-neon-lime/10",
         recom: "Bloque 2: Rentabilidad, Mercados Globales e Incentivos de Innovación.",
       };
     } else if (lows >= 2) {
       return {
         level: "Básico / Tradicional (Alto Potencial)",
         desc: "Existe una enorme oportunidad inmediata para reducir costos e incrementar márgenes. Su prioridad absoluta debe ser el Bloque 1 de nuestro Simposio (04:40 PM - 05:50 PM), donde aprenderá de manera práctica sobre herramientas de IA inmediatas de negocio y automatización de procesos de bajo costo.",
-        badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/30",
-        glowColor: "shadow-amber-500/10",
+        badgeColor: "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30",
+        glowColor: "shadow-neon-cyan/10",
         recom: "Bloque 1: Inteligencia Artificial Aplicada a los Negocios y Automatización Administrativa.",
       };
     } else {
       return {
         level: "Intermedio / En Crecimiento Activo",
         desc: "Está en la ruta correcta, pero aún pierde valiosa rentabilidad en flujos operativos y tareas manuales repetitivas. En el Simposio podrá ver el panel de casos reales locales y aprender a estructurar su primera postulación de deducción fiscal CONCYTEC (hasta 240% de retorno).",
-        badgeColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/30",
-        glowColor: "shadow-cyan-500/10",
+        badgeColor: "bg-neon-lime/10 text-neon-lime border-neon-lime/30",
+        glowColor: "shadow-neon-lime/10",
         recom: "Bloque 1 & 2: Sinergias y Beneficios Tributarios de la Ley Nº 30309.",
       };
     }
@@ -83,7 +83,7 @@ export default function DiagnosticTool() {
   return (
     <div className="relative w-full max-w-3xl mx-auto">
       {/* Glow ambient background behind the card */}
-      <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-600 to-violet-600 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+      <div className="absolute -inset-1.5 bg-gradient-to-r from-neon-lime to-neon-cyan rounded-3xl blur opacity-20 group-hover:opacity-35 transition duration-1000"></div>
       
       <div className="relative bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl text-left overflow-hidden">
         
@@ -95,12 +95,12 @@ export default function DiagnosticTool() {
             {/* Header progress info */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
               <span className="text-slate-400 font-bold tracking-widest uppercase flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse"></span>
                 Autodiagnóstico Directivo
               </span>
               <div className="flex items-center gap-3">
                 <span className="text-slate-400 font-medium">Pregunta {diagStep + 1} de 3</span>
-                <span className="text-cyan-400 font-extrabold bg-cyan-950/40 border border-cyan-850 px-2.5 py-0.5 rounded-full shadow-inner">
+                <span className="text-neon-cyan font-extrabold bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded-full shadow-inner">
                   {Math.round(((diagStep) / 3) * 100)}% Completado
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function DiagnosticTool() {
             {/* Glowing animated progress bar container */}
             <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800/80 shadow-inner">
               <div 
-                className="h-full bg-gradient-to-r from-blue-500 via-violet-500 to-cyan-400 transition-all duration-500 ease-out relative"
+                className="h-full bg-gradient-to-r from-neon-lime via-neon-cyan to-white transition-all duration-500 ease-out relative"
                 style={{ width: `${((diagStep) / 3) * 100}%` }}
               >
                 {/* Neon lead point light */}
@@ -132,14 +132,14 @@ export default function DiagnosticTool() {
                   onMouseLeave={() => setHoveredIdx(null)}
                   className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-4 group/btn ${
                     hoveredIdx === idx
-                      ? "border-violet-500 bg-violet-950/20 shadow-[0_0_20px_-3px_rgba(139,92,246,0.15)] translate-x-1"
+                      ? "border-neon-lime bg-neon-lime/5 shadow-[0_0_20px_-3px_rgba(204,255,0,0.15)] translate-x-1"
                       : "border-slate-800 bg-slate-950/45 hover:border-slate-700"
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     {/* Icon container */}
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform duration-300 ${
-                      hoveredIdx === idx ? "bg-violet-900/50 scale-110" : "bg-slate-900 border border-slate-800"
+                      hoveredIdx === idx ? "bg-neon-lime/10 scale-110" : "bg-slate-900 border border-slate-800"
                     }`}>
                       {opt.icon}
                     </div>
@@ -153,7 +153,7 @@ export default function DiagnosticTool() {
                   {/* Styled Arrow indicator */}
                   <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
                     hoveredIdx === idx
-                      ? "border-cyan-500 bg-cyan-950/30 text-cyan-400 rotate-90 scale-105"
+                      ? "border-neon-cyan bg-neon-cyan/10 text-neon-cyan rotate-90 scale-105"
                       : "border-slate-800 text-slate-500"
                   }`}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,11 +187,11 @@ export default function DiagnosticTool() {
               </p>
               
               <div className="border-t border-slate-800/60 pt-4">
-                <span className="text-[10px] font-black text-cyan-400 uppercase tracking-widest block mb-2">
+                <span className="text-[10px] font-black text-neon-cyan uppercase tracking-widest block mb-2">
                   Bloque Recomendado Especialmente:
                 </span>
                 <div className="flex items-center gap-3 text-sm font-bold text-white">
-                  <div className="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-neon-cyan/10 border border-neon-cyan/30 flex items-center justify-center text-neon-cyan shrink-0">
                     🎯
                   </div>
                   <span>{currentResult?.recom}</span>
@@ -203,7 +203,7 @@ export default function DiagnosticTool() {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
                 href="#agenda"
-                className="flex-1 inline-flex items-center justify-center px-6 h-14 text-sm font-extrabold uppercase tracking-wider rounded-2xl bg-gradient-to-r from-blue-600 via-violet-600 to-cyan-500 text-white hover:opacity-95 shadow-xl hover:shadow-violet-950/30 active:scale-[0.99] transition-all text-center"
+                className="flex-1 inline-flex items-center justify-center px-6 h-14 text-sm font-extrabold uppercase tracking-wider rounded-2xl bg-gradient-to-r from-neon-lime to-neon-cyan text-black hover:opacity-95 shadow-xl hover:shadow-cyan-950/30 active:scale-[0.99] transition-all text-center font-black"
               >
                 Ver Programa Oficial Completo
               </a>
