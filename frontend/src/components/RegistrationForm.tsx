@@ -30,7 +30,7 @@ export default function RegistrationForm() {
         {!registered ? (
           <div className="space-y-8 relative z-10">
             <div className="text-center space-y-3">
-              <span className="text-[10px] font-black text-neon-lime bg-neon-lime/10 border border-neon-lime/30 px-4 py-1.5 rounded-full inline-block uppercase tracking-widest">
+              <span className="text-[10px] font-black text-brand-teal-light bg-brand-teal/10 border border-brand-teal/30 px-4 py-1.5 rounded-full inline-block uppercase tracking-widest">
                 Cupos Limitados a 100 Asistentes Presenciales
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
@@ -57,7 +57,7 @@ export default function RegistrationForm() {
                     placeholder="Ej. Ing. Carlos Mendoza"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-all font-semibold text-sm"
+                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal transition-all font-semibold text-sm"
                   />
                 </div>
 
@@ -73,7 +73,7 @@ export default function RegistrationForm() {
                     placeholder="carlos.mendoza@empresa.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-all font-semibold text-sm"
+                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal transition-all font-semibold text-sm"
                   />
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function RegistrationForm() {
                     placeholder="Ej. Industrias del Sur S.A.C."
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-all font-semibold text-sm"
+                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal transition-all font-semibold text-sm"
                   />
                 </div>
 
@@ -108,7 +108,7 @@ export default function RegistrationForm() {
                     placeholder="Ej. Gerente General / Socio Fundador"
                     value={formData.role}
                     onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-neon-lime focus:ring-1 focus:ring-neon-lime transition-all font-semibold text-sm"
+                    className="w-full h-12 px-4 rounded-xl bg-slate-950 border border-slate-800 text-white placeholder-slate-600 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal transition-all font-semibold text-sm"
                   />
                 </div>
               </div>
@@ -131,14 +131,14 @@ export default function RegistrationForm() {
 
               {/* Security info */}
               <div className="flex items-center gap-3 bg-slate-950/30 border border-slate-850 p-4 rounded-xl text-xs font-semibold text-slate-400">
-                <span className="text-neon-cyan shrink-0 text-base">🛡️</span>
+                <span className="text-brand-teal-light shrink-0 text-base">🛡️</span>
                 <span>Sus datos corporativos serán tratados con estricta confidencialidad por el comité organizador.</span>
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full h-14 mt-4 inline-flex items-center justify-center font-black text-sm uppercase tracking-widest rounded-2xl bg-neon-lime text-black hover:opacity-95 active:scale-[0.98] transition-all shadow-xl shadow-cyan-950/20"
+                className="w-full h-14 mt-4 inline-flex items-center justify-center font-black text-sm uppercase tracking-widest rounded-2xl bg-brand-teal text-white hover:bg-brand-teal-light transition-all shadow-xl shadow-brand-teal/10"
               >
                 Enviar Solicitud de Acreditación
               </button>
@@ -150,7 +150,7 @@ export default function RegistrationForm() {
           <div className="relative z-10 animate-[fadeIn_0.5s_ease-out] max-w-xl mx-auto space-y-8 text-center">
 
             <div className="space-y-2">
-              <div className="w-16 h-16 bg-neon-lime/10 border border-neon-lime/30 rounded-full flex items-center justify-center text-neon-lime mx-auto mb-3 shadow-lg shadow-neon-lime/20 text-2xl">
+              <div className="w-16 h-16 bg-brand-teal/10 border border-brand-teal/30 rounded-full flex items-center justify-center text-brand-teal-light mx-auto mb-3 shadow-lg shadow-brand-teal/20 text-2xl">
                 ✓
               </div>
               <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">Solicitud Recibida</h3>
@@ -163,12 +163,12 @@ export default function RegistrationForm() {
             <div className="relative w-full bg-slate-950 border border-slate-800 rounded-3xl overflow-hidden shadow-2xl">
 
               {/* Ticket Top bar */}
-              <div className="bg-gradient-to-r from-neon-lime to-neon-cyan px-6 py-4 flex items-center justify-between text-left text-black font-black">
+              <div className="bg-gradient-to-r from-brand-teal to-brand-blue px-6 py-4 flex items-center justify-between text-left text-white font-black">
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-black tracking-widest uppercase text-black/70">Pase Digital de Evaluación</span>
-                  <span className="text-xs font-black uppercase tracking-wider text-black">III Simposio Internacional</span>
+                  <span className="text-[9px] font-black tracking-widest uppercase text-white/70">Pase Digital de Evaluación</span>
+                  <span className="text-xs font-black uppercase tracking-wider text-white">III Simposio Internacional</span>
                 </div>
-                <span className="text-xs font-black bg-black/10 px-3 py-1 rounded border border-black/10 uppercase tracking-wide text-black">Aforo: 100</span>
+                <span className="text-xs font-black bg-white/10 px-3 py-1 rounded border border-white/10 uppercase tracking-wide text-white">Aforo: 100</span>
               </div>
 
               <div className="p-6 space-y-6 text-left relative">
@@ -181,7 +181,7 @@ export default function RegistrationForm() {
                   </div>
                   <div>
                     <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider block">Código Provisional</span>
-                    <span className="text-xs sm:text-sm font-black text-neon-lime font-mono">{ticketCode}</span>
+                    <span className="text-xs sm:text-sm font-black text-brand-teal-light font-mono">{ticketCode}</span>
                   </div>
                   <div>
                     <span className="text-[9px] text-slate-500 font-bold uppercase tracking-wider block">Empresa</span>
@@ -210,7 +210,7 @@ export default function RegistrationForm() {
                   <div className="space-y-1.5 text-center sm:text-left">
                     <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Fecha y Hora de Acceso</div>
                     <div className="text-xs font-black text-white">Miércoles, 1 de Julio de 2026</div>
-                    <div className="text-[10px] text-neon-cyan font-bold uppercase tracking-wide">4:00 PM – Auditorio CCIA Arequipa</div>
+                    <div className="text-[10px] text-brand-teal-light font-bold uppercase tracking-wide">4:00 PM – Auditorio CCIA Arequipa</div>
                   </div>
 
                   {/* Visual QR Code barcode mock */}
@@ -240,12 +240,12 @@ export default function RegistrationForm() {
             </div>
 
             <p className="text-slate-400 text-xs leading-relaxed font-semibold max-w-sm mx-auto">
-              Se ha enviado un correo con los detalles de tu postulación y el número de contacto del MC a <span className="text-neon-lime font-bold">{formData.email}</span>.
+              Se ha enviado un correo con los detalles de tu postulación y el número de contacto del MC a <span className="text-brand-teal-light font-bold">{formData.email}</span>.
             </p>
 
             <button
               onClick={() => setRegistered(false)}
-              className="inline-flex items-center justify-center text-xs font-black uppercase tracking-wider text-slate-500 hover:text-neon-lime transition-colors"
+              className="inline-flex items-center justify-center text-xs font-black uppercase tracking-wider text-slate-500 hover:text-brand-teal-light transition-colors"
             >
               Registrar otra postulación empresarial
             </button>

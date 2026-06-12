@@ -50,24 +50,24 @@ export default function DiagnosticTool() {
       return {
         level: "Líder Tecnológico / Avanzado",
         desc: "¡Excelente! Su empresa cuenta con una sólida base innovadora. Le recomendamos asistir principalmente al Bloque 2 del Simposio (05:50 PM - 07:30 PM) para afinar estrategias avanzadas de escalamiento regional, financiamiento multilateral e internacionalización comercial.",
-        badgeColor: "bg-neon-lime/10 text-neon-lime border-neon-lime/30",
-        glowColor: "shadow-neon-lime/10",
+        badgeColor: "bg-brand-teal/10 text-brand-teal-light border-brand-teal/30",
+        glowColor: "shadow-brand-teal/10",
         recom: "Bloque 2: Rentabilidad, Mercados Globales e Incentivos de Innovación.",
       };
     } else if (lows >= 2) {
       return {
         level: "Básico / Tradicional (Alto Potencial)",
         desc: "Existe una enorme oportunidad inmediata para reducir costos e incrementar márgenes. Su prioridad absoluta debe ser el Bloque 1 de nuestro Simposio (04:40 PM - 05:50 PM), donde aprenderá de manera práctica sobre herramientas de IA inmediatas de negocio y automatización de procesos de bajo costo.",
-        badgeColor: "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/30",
-        glowColor: "shadow-neon-cyan/10",
+        badgeColor: "bg-brand-blue/20 text-slate-300 border-brand-blue/35",
+        glowColor: "shadow-brand-blue/10",
         recom: "Bloque 1: Inteligencia Artificial Aplicada a los Negocios y Automatización Administrativa.",
       };
     } else {
       return {
         level: "Intermedio / En Crecimiento Activo",
-        desc: "Está en la ruta correcta, pero aún pierde valiosa rentabilidad en flujos operativos y tareas manuales repetitivas. En el Simposio podrá ver el panel de casos reales locales y aprender a estructurar su primera postulación de deducción fiscal CONCYTEC (hasta 240% de retorno).",
-        badgeColor: "bg-neon-lime/10 text-neon-lime border-neon-lime/30",
-        glowColor: "shadow-neon-lime/10",
+        desc: "Está en la ruta correcta, pero aún pierde valiosa rentabilidad en flujos operativos y tareas manuales repetitivas. En el Simposio podrá ver el panel de casos reales locales y aprender a la vez a estructurar su primera postulación de deducción fiscal CONCYTEC (hasta 240% de retorno).",
+        badgeColor: "bg-brand-teal/10 text-brand-teal-light border-brand-teal/30",
+        glowColor: "shadow-brand-teal/10",
         recom: "Bloque 1 & 2: Sinergias y Beneficios Tributarios de la Ley Nº 30309.",
       };
     }
@@ -95,12 +95,12 @@ export default function DiagnosticTool() {
             {/* Header progress info */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
               <span className="text-slate-400 font-bold tracking-widest uppercase flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-neon-lime animate-pulse"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-teal-light animate-pulse"></span>
                 Autodiagnóstico Directivo
               </span>
               <div className="flex items-center gap-3">
                 <span className="text-slate-400 font-medium">Pregunta {diagStep + 1} de 3</span>
-                <span className="text-neon-cyan font-extrabold bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded-full shadow-inner">
+                <span className="text-brand-teal-light font-extrabold bg-slate-950 border border-slate-800 px-2.5 py-0.5 rounded-full shadow-inner">
                   {Math.round(((diagStep) / 3) * 100)}% Completado
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function DiagnosticTool() {
             {/* Glowing animated progress bar container */}
             <div className="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800/80 shadow-inner">
               <div 
-                className="h-full bg-gradient-to-r from-neon-lime via-neon-cyan to-white transition-all duration-500 ease-out relative"
+                className="h-full bg-gradient-to-r from-brand-teal via-brand-teal-light to-brand-neutral transition-all duration-500 ease-out relative"
                 style={{ width: `${((diagStep) / 3) * 100}%` }}
               >
                 {/* Neon lead point light */}
@@ -132,14 +132,14 @@ export default function DiagnosticTool() {
                   onMouseLeave={() => setHoveredIdx(null)}
                   className={`w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between gap-4 group/btn ${
                     hoveredIdx === idx
-                      ? "border-neon-lime bg-neon-lime/5 shadow-[0_0_20px_-3px_rgba(204,255,0,0.15)] translate-x-1"
+                      ? "border-brand-teal bg-brand-teal/5 shadow-[0_0_20px_-3px_rgba(14,113,108,0.15)] translate-x-1"
                       : "border-slate-800 bg-slate-950/45 hover:border-slate-700"
                   }`}
                 >
                   <div className="flex items-center gap-4">
                     {/* Icon container */}
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 transition-transform duration-300 ${
-                      hoveredIdx === idx ? "bg-neon-lime/10 scale-110" : "bg-slate-900 border border-slate-800"
+                      hoveredIdx === idx ? "bg-brand-teal/10 scale-110" : "bg-slate-900 border border-slate-800"
                     }`}>
                       {opt.icon}
                     </div>
@@ -153,7 +153,7 @@ export default function DiagnosticTool() {
                   {/* Styled Arrow indicator */}
                   <div className={`w-8 h-8 rounded-full border flex items-center justify-center shrink-0 transition-all duration-300 ${
                     hoveredIdx === idx
-                      ? "border-neon-cyan bg-neon-cyan/10 text-neon-cyan rotate-90 scale-105"
+                      ? "border-brand-teal-light bg-brand-teal-light/10 text-brand-teal-light rotate-90 scale-105"
                       : "border-slate-800 text-slate-500"
                   }`}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +203,7 @@ export default function DiagnosticTool() {
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <a
                 href="#agenda"
-                className="flex-1 inline-flex items-center justify-center px-6 h-14 text-sm font-extrabold uppercase tracking-wider rounded-2xl bg-gradient-to-r from-neon-lime to-neon-cyan text-black hover:opacity-95 shadow-xl hover:shadow-cyan-950/30 active:scale-[0.99] transition-all text-center font-black"
+                className="flex-1 inline-flex items-center justify-center px-6 h-14 text-sm font-extrabold uppercase tracking-wider rounded-2xl bg-brand-teal text-white hover:bg-brand-teal-light shadow-xl hover:shadow-brand-teal/20 active:scale-[0.99] transition-all text-center font-black"
               >
                 Ver Programa Oficial Completo
               </a>

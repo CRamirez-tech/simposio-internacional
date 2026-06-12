@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-neon-lime: #ccff00;
-  --color-neon-cyan: #00f0ff;
+  /* Brand official colors */
+  --color-brand-blue: #141e42;
+  --color-brand-teal: #0e716c;
+  --color-brand-teal-light: #14a39b;
+  --color-brand-neutral: #e8e8e8;
+
+  --color-neon-lime: #0e716c;
+  --color-neon-cyan: #14a39b;
   
-  --color-flyer-blue-950: #010816;
-  --color-flyer-blue-900: #021228;
-  --color-flyer-blue-850: #031c3c;
-  --color-flyer-blue-800: #052954;
+  --color-flyer-blue-950: #070a18;
+  --color-flyer-blue-900: #0c1126;
+  --color-flyer-blue-850: #111836;
+  --color-flyer-blue-800: #141e42;
   
-  /* Overriding standard slate and violet colors to automatically transform the whole page to the deep blue flyer theme */
-  --color-slate-950: #010816;
-  --color-slate-900: #021228;
-  --color-slate-850: #031b39;
-  --color-slate-800: #04254d;
+  /* Overriding standard slate and violet colors to automatically transform the whole page to the deep brand blue theme */
+  --color-slate-950: #070a18;
+  --color-slate-900: #0c1126;
+  --color-slate-850: #111836;
+  --color-slate-800: #141e42;
   --color-slate-450: #94a3b8;
   --color-slate-350: #cbd5e1;
   
-  --color-violet-950: #01050e;
-  --color-violet-900: #010f22;
-  --color-violet-850: #021a3b;
-  --color-violet-800: #03234f;
+  --color-violet-950: #052624;
+  --color-violet-900: #073b38;
+  --color-violet-850: #0b5c57;
+  --color-violet-800: #0e716c;
   
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-outfit: "Outfit", var(--font-sans);
@@ -57,21 +63,21 @@ body {
   color: var(--color-slate-300);
 }
 
-/* Custom Scrollbar for premium dark flyer style */
+/* Custom Scrollbar for brand corporate style */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #010816;
+  background: var(--color-slate-950);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #031b39;
+  background: var(--color-slate-850);
   border-radius: 9999px;
-  border: 2.5px solid #010816;
+  border: 2.5px solid var(--color-slate-950);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccff00;
+  background: var(--color-brand-teal);
 }

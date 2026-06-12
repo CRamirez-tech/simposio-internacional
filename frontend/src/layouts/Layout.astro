@@ -11,7 +11,7 @@ const {
   description = "Encuentro de innovación y tecnología más dinámico del macrosur en Arequipa. Conéctate con líderes empresariales, aprende de IA aplicada y conoce beneficios fiscales de SUNAT y CONCYTEC."
 } = Astro.props;
 
-const baseUrl = Astro.BASE_URL;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -43,24 +43,24 @@ const baseUrl = Astro.BASE_URL;
     <meta name="theme-color" content="#030712" />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
   </head>
-  <body class="min-h-screen bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden relative selection:bg-neon-lime selection:text-black">
+  <body class="min-h-screen bg-slate-950 text-slate-300 font-sans antialiased overflow-x-hidden relative selection:bg-brand-teal selection:text-white">
     
     <!-- ── Ambient Premium Glow Orbs Background ── -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none -z-25 min-h-screen">
       <!-- Flyer blue pulsing glow, upper left -->
-      <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-flyer-blue-800/25 blur-[120px] animate-float-slow"></div>
+      <div class="absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-flyer-blue-800/20 blur-[120px] animate-float-slow"></div>
       
-      <!-- Neon Cyan pulsing glow, upper right -->
-      <div class="absolute top-[5%] right-[-15%] w-[55vw] h-[55vw] rounded-full bg-neon-cyan/8 blur-[130px] animate-float-delayed"></div>
+      <!-- Brand Teal Light pulsing glow, upper right -->
+      <div class="absolute top-[5%] right-[-15%] w-[55vw] h-[55vw] rounded-full bg-brand-teal-light/8 blur-[130px] animate-float-delayed"></div>
       
-      <!-- Neon Lime pulsing glow, middle -->
-      <div class="absolute top-[35%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-neon-lime/4 blur-[150px] animate-pulse-slow"></div>
+      <!-- Brand Teal pulsing glow, middle -->
+      <div class="absolute top-[35%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-brand-teal/4 blur-[150px] animate-pulse-slow"></div>
       
-      <!-- Neon Lime pulsing glow, lower right -->
-      <div class="absolute bottom-[10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-neon-lime/6 blur-[140px] animate-float-slow"></div>
+      <!-- Brand Teal pulsing glow, lower right -->
+      <div class="absolute bottom-[10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-brand-teal/6 blur-[140px] animate-float-slow"></div>
       
       <!-- Deep Blue pulsing glow, bottom left -->
-      <div class="absolute bottom-[-15%] left-[-15%] w-[55vw] h-[55vw] rounded-full bg-flyer-blue-900/25 blur-[120px] animate-float-delayed"></div>
+      <div class="absolute bottom-[-15%] left-[-15%] w-[55vw] h-[55vw] rounded-full bg-flyer-blue-900/20 blur-[120px] animate-float-delayed"></div>
     </div>
 
     <!-- Layout Main Wrapper -->
