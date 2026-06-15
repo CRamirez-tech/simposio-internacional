@@ -331,9 +331,22 @@ const cronograma = [
                 <span class="w-2 h-2 rounded-full bg-emerald-500 absolute"></span>
                 <span class="text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase">Symposium Status: Active</span>
               </div>
-              <span class="text-[9px] font-mono text-slate-500 bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-md uppercase tracking-wider">
-                Console v1.0.4
-              </span>
+              <div class="flex items-center space-x-1.5">
+                <span class="text-[9px] font-mono text-slate-500 bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-md uppercase tracking-wider">
+                  Console v1.0.4
+                </span>
+                <a 
+                  href={`${import.meta.env.BASE_URL}control-aforo`}
+                  class="text-[9px] font-mono text-slate-500 hover:text-neon-lime bg-slate-950/80 border border-slate-850 hover:border-neon-lime/30 px-2 py-1 rounded-md uppercase tracking-wider transition-all duration-300 flex items-center gap-1 cursor-pointer"
+                  title="Configurar Aforo"
+                >
+                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.43l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.991l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.28z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  Config
+                </a>
+              </div>
             </div>
 
             <!-- Central Content: Dashboard Widget -->
@@ -377,39 +390,11 @@ const cronograma = [
                 </div>
 
                 <div class="flex justify-between items-center text-[10px] text-slate-400 font-medium">
-                  <div class="flex items-center space-x-1 bg-slate-950/80 border border-slate-900/80 px-2 py-0.5 rounded-lg select-none">
-                    <button 
-                      type="button" 
-                      id="btn-aforo-dec" 
-                      class="w-4 h-4 rounded flex items-center justify-center text-[10px] font-bold text-slate-400 hover:text-white hover:bg-slate-900 active:scale-90 transition-all focus:outline-none cursor-pointer"
-                      title="Disminuir Aforo"
-                    >
-                      -
-                    </button>
+                  <div class="flex items-center space-x-1.5 bg-slate-950/80 border border-slate-900/80 px-2.5 py-1 rounded-lg select-none">
                     <span id="aforo-count" class="font-mono font-bold text-white text-[11px] w-6 text-center">88</span>
                     <span class="text-slate-500 text-[10px]">/ 100</span>
-                    <button 
-                      type="button" 
-                      id="btn-aforo-inc" 
-                      class="w-4 h-4 rounded flex items-center justify-center text-[10px] font-bold text-slate-400 hover:text-white hover:bg-slate-900 active:scale-90 transition-all focus:outline-none cursor-pointer"
-                      title="Incrementar Aforo"
-                    >
-                      +
-                    </button>
                   </div>
                   <span id="aforo-status-msg" class="text-neon-cyan font-bold animate-[pulse_1.5s_infinite]">¡Últimos 12 Cupos Libres!</span>
-                </div>
-
-                {/* Range Slider for Interactive Capacity Modification */}
-                <div class="pt-0.5">
-                  <input 
-                    type="range" 
-                    id="aforo-slider" 
-                    min="0" 
-                    max="100" 
-                    value="88" 
-                    class="w-full h-1 bg-slate-900 rounded-lg appearance-none cursor-pointer focus:outline-none accent-[#14a39b]"
-                  />
                 </div>
               </div>
 
@@ -892,21 +877,17 @@ const cronograma = [
     setInterval(updateCountdown, 1000);
   })();
 
-  // Interactive Aforo Control
+  // Aforo Display Update (Loads from localStorage and updates dynamically)
   (function() {
-    const slider = document.getElementById('aforo-slider');
-    const btnDec = document.getElementById('btn-aforo-dec');
-    const btnInc = document.getElementById('btn-aforo-inc');
     const countDisplay = document.getElementById('aforo-count');
     const percentageDisplay = document.getElementById('aforo-percentage');
     const bar = document.getElementById('aforo-bar');
     const statusMsg = document.getElementById('aforo-status-msg');
 
-    if (!slider || !btnDec || !btnInc || !countDisplay || !percentageDisplay || !bar || !statusMsg) return;
+    if (!countDisplay || !percentageDisplay || !bar || !statusMsg) return;
 
     const updateAforo = (value) => {
       const val = Math.max(0, Math.min(100, Number(value)));
-      slider.value = val;
       countDisplay.textContent = val;
       percentageDisplay.textContent = `${val}% Completado`;
       bar.style.width = `${val}%`;
@@ -924,16 +905,24 @@ const cronograma = [
       }
     };
 
-    slider.addEventListener('input', (e) => {
-      updateAforo(e.target.value);
-    });
+    // Load initial from localStorage or default to 88
+    const getSavedAforo = () => {
+      try {
+        const saved = localStorage.getItem('aforo_presencial');
+        return saved !== null ? Number(saved) : 88;
+      } catch (e) {
+        return 88;
+      }
+    };
 
-    btnDec.addEventListener('click', () => {
-      updateAforo(Number(slider.value) - 1);
-    });
+    // Initial load
+    updateAforo(getSavedAforo());
 
-    btnInc.addEventListener('click', () => {
-      updateAforo(Number(slider.value) + 1);
+    // Listen to storage events to update real-time if changed in another tab
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'aforo_presencial') {
+        updateAforo(e.newValue || 88);
+      }
     });
   })();
 </script>

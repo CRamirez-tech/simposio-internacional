@@ -1,0 +1,329 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<Layout title="Panel de Control - Aforo Presencial">
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-40 backdrop-blur-md bg-slate-950/70 border-b border-slate-900/60 shadow-lg">
+    <div class="max-w-4xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href={`${baseUrl}`} class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-neon-lime to-neon-cyan border border-neon-lime/30 flex items-center justify-center shadow-lg shadow-cyan-950/20 transition-transform duration-300 group-hover:scale-105">
+          <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.25" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <div class="flex flex-col text-left">
+          <span class="text-sm sm:text-base font-black font-outfit text-white tracking-tight uppercase leading-none">
+            III Simposio <span class="bg-clip-text text-transparent bg-neon-lime">Internacional</span>
+          </span>
+          <span class="text-[8px] text-slate-500 font-black uppercase tracking-widest mt-1">
+            Panel de Configuración
+          </span>
+        </div>
+      </a>
+
+      <!-- Back button -->
+      <a 
+        href={`${baseUrl}`}
+        class="inline-flex items-center gap-2 px-4 py-2 text-xs font-black uppercase tracking-wider rounded-xl bg-slate-900 border border-slate-800 text-slate-350 hover:text-white hover:bg-slate-800 transition-all hover:scale-[1.02]"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Volver al Simposio
+      </a>
+    </div>
+  </header>
+
+  <main class="py-12 px-6 max-w-4xl mx-auto relative z-10">
+    <!-- Background Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-tr from-neon-lime/10 to-neon-cyan/10 rounded-full blur-[100px] -z-10 opacity-70 animate-pulse-slow"></div>
+
+    <div class="grid md:grid-cols-12 gap-8 items-start">
+      
+      <!-- Control Panel Column -->
+      <div class="md:col-span-7 space-y-6">
+        <div class="bg-[#020b18]/90 backdrop-blur-xl border border-slate-900/60 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden text-left">
+          <!-- Tech Grid overlay -->
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,#0e716c03_1px,transparent_1px),linear-gradient(to_bottom,#0e716c05_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
+
+          <!-- Section title -->
+          <div class="relative z-10 space-y-2 pb-5 border-b border-slate-900/80">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-neon-lime animate-pulse"></span>
+                <span class="text-[10px] font-mono font-bold tracking-widest text-neon-lime uppercase">AJUSTES EN VIVO</span>
+              </div>
+              <!-- Live Saved Status -->
+              <span id="save-indicator" class="text-[9px] font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-900/40 px-2 py-0.5 rounded opacity-0 transition-opacity duration-300">
+                ✓ Guardado localmente
+              </span>
+            </div>
+            <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight font-outfit">Aforo Presencial</h1>
+            <p class="text-slate-400 text-xs leading-relaxed font-medium">
+              Modifica la cantidad de cupos ocupados del Simposio. El valor se actualiza instantáneamente en el navegador del usuario.
+            </p>
+          </div>
+
+          <!-- Controls Section -->
+          <div class="relative z-10 py-6 space-y-6">
+            <!-- Large Counter Display & Manual input -->
+            <div class="flex items-center justify-between bg-slate-950/60 border border-slate-900/60 rounded-2xl p-4 shadow-inner">
+              <div class="space-y-1">
+                <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Aforo Actual</span>
+                <div class="flex items-baseline space-x-1">
+                  <span id="admin-count" class="text-4xl font-black text-white font-mono leading-none">88</span>
+                  <span class="text-slate-500 text-sm font-semibold">/ 100 invitados</span>
+                </div>
+              </div>
+
+              <!-- Manual Input -->
+              <div class="space-y-1 text-right">
+                <label for="admin-input-val" class="text-[10px] text-slate-500 font-bold uppercase tracking-wider block">Valor numérico</label>
+                <input 
+                  type="number" 
+                  id="admin-input-val" 
+                  min="0" 
+                  max="100" 
+                  value="88" 
+                  class="w-20 h-10 px-3 bg-slate-900 border border-slate-800 rounded-xl text-center text-white font-mono font-bold focus:outline-none focus:border-neon-lime transition-colors"
+                />
+              </div>
+            </div>
+
+            <!-- Decrement, Slider and Increment controls -->
+            <div class="space-y-3">
+              <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Control Deslizante</span>
+              
+              <div class="flex items-center gap-4">
+                <!-- Decrement button -->
+                <button
+                  type="button"
+                  id="admin-btn-dec"
+                  class="w-11 h-11 bg-slate-900 hover:bg-slate-800 active:scale-95 border border-slate-850 rounded-xl flex items-center justify-center text-slate-350 hover:text-white font-extrabold text-lg transition-all focus:outline-none cursor-pointer"
+                  title="Disminuir -1"
+                >
+                  -
+                </button>
+
+                <!-- Slider -->
+                <div class="flex-grow pt-1.5">
+                  <input 
+                    type="range" 
+                    id="admin-slider" 
+                    min="0" 
+                    max="100" 
+                    value="88" 
+                    class="w-full h-2 bg-slate-900 rounded-lg appearance-none cursor-pointer focus:outline-none accent-neon-cyan"
+                  />
+                  <div class="flex justify-between text-[9px] text-slate-500 font-mono font-bold mt-2.5">
+                    <span>0% (Libre)</span>
+                    <span>50%</span>
+                    <span>100% (Lleno)</span>
+                  </div>
+                </div>
+
+                <!-- Increment button -->
+                <button
+                  type="button"
+                  id="admin-btn-inc"
+                  class="w-11 h-11 bg-slate-900 hover:bg-slate-800 active:scale-95 border border-slate-850 rounded-xl flex items-center justify-center text-slate-350 hover:text-white font-extrabold text-lg transition-all focus:outline-none cursor-pointer"
+                  title="Incrementar +1"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Footer Panel -->
+          <div class="relative z-10 pt-4 border-t border-slate-900/80 flex items-center justify-between text-xs">
+            <button
+              type="button"
+              id="admin-btn-reset"
+              class="text-slate-450 hover:text-white transition-colors"
+            >
+              Restablecer por defecto (88)
+            </button>
+            <span class="text-[10px] text-slate-500">
+              * Cambios guardados automáticamente en local.
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preview Widget Column -->
+      <div class="md:col-span-5 space-y-4">
+        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block text-left">Vista Previa del Widget Principal</span>
+        
+        <!-- Dashboard Widget (Exact match from index.astro) -->
+        <div class="relative w-full bg-[#020b18]/90 backdrop-blur-xl border border-slate-900/60 rounded-3xl p-6 shadow-2xl flex flex-col justify-between overflow-hidden text-left pointer-events-none">
+          <!-- Tech Grid overlay -->
+          <div class="absolute inset-0 bg-[linear-gradient(to_right,#0e716c05_1px,transparent_1px),linear-gradient(to_bottom,#0e716c05_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
+
+          <!-- Section: Real-time Capacity Meter -->
+          <div class="space-y-4 relative z-10 py-2">
+            <div class="flex justify-between items-center text-xs">
+              <span class="font-bold text-slate-300">Aforo Presencial CCIA</span>
+              <span id="admin-percentage" class="font-bold text-neon-lime uppercase tracking-wide text-[10px]">88% Completado</span>
+            </div>
+            
+            {/* Progress Bar */}
+            <div class="w-full h-2.5 bg-slate-900/85 rounded-full overflow-hidden border border-slate-800/80">
+              <div id="admin-bar" class="h-full bg-gradient-to-r from-neon-lime to-neon-cyan rounded-full transition-all duration-300 shadow-md" style="width: 88%;"></div>
+            </div>
+
+            <div class="flex justify-between items-center text-[10px] text-slate-400 font-medium">
+              <div class="flex items-center space-x-1.5 bg-slate-950/80 border border-slate-900/80 px-2.5 py-1 rounded-lg">
+                <span id="admin-count-preview" class="font-mono font-bold text-white text-[11px] w-6 text-center">88</span>
+                <span class="text-slate-500 text-[10px]">/ 100</span>
+              </div>
+              <span id="admin-status-msg" class="text-neon-cyan font-bold animate-[pulse_1.5s_infinite]">¡Últimos 12 Cupos Libres!</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tip Alert Box -->
+        <div class="bg-violet-950/20 border border-violet-900/25 rounded-2xl p-4 text-left text-xs leading-relaxed space-y-2">
+          <div class="flex items-center space-x-2 text-neon-cyan font-bold uppercase tracking-wider text-[10px]">
+            <span>💡 Nota de Desarrollo</span>
+          </div>
+          <p class="text-slate-400">
+            Al realizar cambios en esta consola de administración, los datos se almacenarán en la clave de <strong>localStorage</strong> del navegador. Al regresar al inicio, podrás ver cómo los cambios se reflejan inmediatamente en el aforo mostrado sin alterar el código de producción.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Script for admin controls -->
+  <script is:inline>
+    (function() {
+      // 1. Get elements
+      const slider = document.getElementById('admin-slider');
+      const inputVal = document.getElementById('admin-input-val');
+      const btnDec = document.getElementById('admin-btn-dec');
+      const btnInc = document.getElementById('admin-btn-inc');
+      const countDisplay = document.getElementById('admin-count');
+      const countPreview = document.getElementById('admin-count-preview');
+      const percentageDisplay = document.getElementById('admin-percentage');
+      const bar = document.getElementById('admin-bar');
+      const statusMsg = document.getElementById('admin-status-msg');
+      const saveIndicator = document.getElementById('save-indicator');
+      const resetBtn = document.getElementById('admin-btn-reset');
+
+      // Load initial from localStorage or default to 88
+      const getSavedAforo = () => {
+        try {
+          const saved = localStorage.getItem('aforo_presencial');
+          return saved !== null ? Number(saved) : 88;
+        } catch (e) {
+          return 88;
+        }
+      };
+
+      const saveAforo = (value) => {
+        try {
+          localStorage.setItem('aforo_presencial', value);
+          
+          // Show saved status
+          if (saveIndicator) {
+            saveIndicator.classList.remove('opacity-0');
+            saveIndicator.classList.add('opacity-100');
+            // Hide after 1 second
+            if (window.saveTimeout) clearTimeout(window.saveTimeout);
+            window.saveTimeout = setTimeout(() => {
+              saveIndicator.classList.remove('opacity-100');
+              saveIndicator.classList.add('opacity-0');
+            }, 1200);
+          }
+        } catch (e) {
+          console.error('Failed to save to localStorage:', e);
+        }
+      };
+
+      const updateAdminUI = (value) => {
+        const val = Math.max(0, Math.min(100, Number(value)));
+        
+        // Update control displays
+        if (slider) slider.value = val;
+        if (inputVal) inputVal.value = val;
+        if (countDisplay) countDisplay.textContent = val;
+        
+        // Update widget preview displays
+        if (countPreview) countPreview.textContent = val;
+        if (percentageDisplay) percentageDisplay.textContent = `${val}% Completado`;
+        if (bar) bar.style.width = `${val}%`;
+        
+        if (statusMsg) {
+          const remaining = 100 - val;
+          if (remaining === 0) {
+            statusMsg.textContent = '¡Aforo Presencial Completo!';
+            statusMsg.className = 'text-red-400 font-bold';
+          } else if (remaining <= 20) {
+            statusMsg.textContent = `¡Últimos ${remaining} Cupos Libres!`;
+            statusMsg.className = 'text-neon-cyan font-bold animate-[pulse_1.5s_infinite]';
+          } else {
+            statusMsg.textContent = `${remaining} Cupos Disponibles`;
+            statusMsg.className = 'text-slate-400 font-bold';
+          }
+        }
+      };
+
+      const handleValueChange = (newValue) => {
+        const val = Math.max(0, Math.min(100, Number(newValue)));
+        updateAdminUI(val);
+        saveAforo(val);
+      };
+
+      // Initial load
+      const initialVal = getSavedAforo();
+      updateAdminUI(initialVal);
+
+      // Event listeners
+      if (slider) {
+        slider.addEventListener('input', (e) => {
+          handleValueChange(e.target.value);
+        });
+      }
+
+      if (inputVal) {
+        inputVal.addEventListener('change', (e) => {
+          handleValueChange(e.target.value);
+        });
+        inputVal.addEventListener('input', (e) => {
+          const val = Number(e.target.value);
+          if (!isNaN(val) && val >= 0 && val <= 100) {
+            updateAdminUI(val);
+            saveAforo(val);
+          }
+        });
+      }
+
+      if (btnDec) {
+        btnDec.addEventListener('click', () => {
+          const current = slider ? Number(slider.value) : getSavedAforo();
+          handleValueChange(current - 1);
+        });
+      }
+
+      if (btnInc) {
+        btnInc.addEventListener('click', () => {
+          const current = slider ? Number(slider.value) : getSavedAforo();
+          handleValueChange(current + 1);
+        });
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          handleValueChange(88);
+        });
+      }
+    })();
+  </script>
+</Layout>
