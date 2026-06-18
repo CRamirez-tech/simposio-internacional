@@ -35,8 +35,8 @@ export default function FaqAccordion() {
             key={index} 
             className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
               isOpen 
-                ? "border-brand-teal bg-slate-900/60 shadow-[0_0_20px_-3px_rgba(14,113,108,0.15)]" 
-                : "border-slate-800 bg-slate-950/45 hover:border-slate-700"
+                ? "border-brand-teal bg-slate-50/80 dark:bg-slate-900/60 shadow-[0_0_20px_-3px_rgba(14,113,108,0.15)]" 
+                : "border-slate-200 bg-white/50 hover:border-slate-300 dark:border-slate-800 dark:bg-slate-950/45 dark:hover:border-slate-700"
             }`}
           >
             <button 
@@ -44,7 +44,7 @@ export default function FaqAccordion() {
               className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
             >
               <span className={`text-sm sm:text-base font-bold transition-colors ${
-                isOpen ? "text-white" : "text-slate-350 hover:text-white"
+                isOpen ? "text-brand-teal dark:text-white" : "text-slate-700 dark:text-slate-350 hover:text-slate-950 dark:hover:text-white"
               }`}>
                 {faq.question}
               </span>
@@ -52,7 +52,7 @@ export default function FaqAccordion() {
               <span className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300 shrink-0 ${
                 isOpen 
                   ? "rotate-180 border-brand-teal bg-brand-teal/10 text-brand-teal-light" 
-                  : "border-slate-800 bg-slate-900 text-slate-400"
+                  : "border-slate-200 bg-slate-100 text-slate-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400"
               }`}>
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7" />
@@ -63,10 +63,10 @@ export default function FaqAccordion() {
             {/* Smooth transition container */}
             <div 
               className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                isOpen ? "max-h-[300px] opacity-100 border-t border-slate-850" : "max-h-0 opacity-0"
+                isOpen ? "max-h-[300px] opacity-100 border-t border-slate-200 dark:border-slate-850" : "max-h-0 opacity-0"
               }`}
             >
-              <div className="px-6 py-5 text-sm text-slate-300 leading-relaxed font-medium">
+              <div className="px-6 py-5 text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
                 {faq.answer}
               </div>
             </div>

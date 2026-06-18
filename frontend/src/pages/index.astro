@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import FaqAccordion from '../components/FaqAccordion';
 import Logo from '../components/Logo.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 // 5 Ejes Temáticos del Simposio (según PDF)
 const ejesTematicos = [
@@ -150,7 +151,7 @@ const cronograma = [
 
 
   <!-- Glass Sticky Header -->
-  <header class="sticky top-0 z-45 backdrop-blur-md bg-slate-950/70 border-b border-slate-900/60 shadow-lg">
+  <header class="sticky top-0 z-45 backdrop-blur-md bg-white/70 dark:bg-slate-950/70 border-b border-slate-200/60 dark:border-slate-900/60 shadow-lg transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-6 h-22 flex items-center justify-between">
       
       <!-- Brand Logo -->
@@ -161,24 +162,25 @@ const cronograma = [
           </svg>
         </div>
         <div class="flex flex-col text-left">
-          <span class="text-base sm:text-lg font-black font-outfit text-white tracking-tight uppercase leading-none">
+          <span class="text-base sm:text-lg font-black font-outfit text-slate-900 dark:text-white tracking-tight uppercase leading-none transition-colors duration-300">
             III Simposio <span class="bg-clip-text text-transparent bg-neon-lime">Internacional</span>
           </span>
-          <span class="text-[8px] sm:text-[9px] text-slate-500 font-black uppercase tracking-widest mt-1">
+          <span class="text-[8px] sm:text-[9px] text-slate-550 dark:text-slate-500 font-black uppercase tracking-widest mt-1 transition-colors duration-300">
             Desarrollo Empresarial Arequipa
           </span>
         </div>
       </a>
 
       <!-- Desktop Links -->
-      <nav class="hidden lg:flex items-center space-x-8 text-xs font-black uppercase tracking-wider text-slate-400">
-        <a href="#agenda" class="hover:text-white transition-colors">Programa</a>
-        <a href="#proximamente" class="hover:text-white transition-colors">Próximamente</a>
-        <a href="#faq" class="hover:text-white transition-colors">Ayuda</a>
+      <nav class="hidden lg:flex items-center space-x-8 text-xs font-black uppercase tracking-wider text-slate-600 dark:text-slate-400">
+        <a href="#agenda" class="hover:text-slate-900 dark:hover:text-white transition-colors">Programa</a>
+        <a href="#proximamente" class="hover:text-slate-900 dark:hover:text-white transition-colors">Próximamente</a>
+        <a href="#faq" class="hover:text-slate-900 dark:hover:text-white transition-colors">Ayuda</a>
       </nav>
 
-      <!-- Exclusive CTA -->
-      <div class="hidden lg:flex items-center">
+      <!-- Exclusive CTA & Theme Toggle -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <ThemeToggle />
         <a 
           href="https://docs.google.com/forms/d/e/1FAIpQLSfJX4mCbyTkkZm51t277jsRH-C06sZ8TK594r3OtW_8NPoTKw/viewform?usp=sharing&ouid=112901862161680664031"
           target="_blank"
@@ -189,26 +191,29 @@ const cronograma = [
         </a>
       </div>
 
-      <!-- Hamburger mobile button -->
-      <button 
-        id="mobile-menu-btn"
-        class="lg:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-900 transition-colors focus:outline-none"
-        aria-label="Abrir menú móvil"
-      >
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <!-- Mobile Controls (Includes Theme Toggle + Hamburger) -->
+      <div class="flex lg:hidden items-center space-x-3">
+        <ThemeToggle />
+        <button 
+          id="mobile-menu-btn"
+          class="p-2 rounded-xl text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-450 dark:hover:text-white dark:hover:bg-slate-900 transition-colors focus:outline-none"
+          aria-label="Abrir menú móvil"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- Mobile Navigation Menu -->
     <div 
       id="mobile-nav" 
-      class="hidden lg:hidden bg-slate-950/95 backdrop-blur-md border-b border-slate-900 px-6 py-6 space-y-4 shadow-xl"
+      class="hidden lg:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 px-6 py-6 space-y-4 shadow-xl transition-colors duration-300"
     >
-      <a href="#agenda" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-400 hover:text-white">Programa</a>
-      <a href="#proximamente" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-400 hover:text-white">Próximamente</a>
-      <a href="#faq" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-400 hover:text-white">Preguntas</a>
+      <a href="#agenda" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">Programa</a>
+      <a href="#proximamente" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">Próximamente</a>
+      <a href="#faq" class="mobile-link block text-sm font-black uppercase tracking-widest text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white">Preguntas</a>
       <div class="pt-2">
         <a 
           href="https://docs.google.com/forms/d/e/1FAIpQLSfJX4mCbyTkkZm51t277jsRH-C06sZ8TK594r3OtW_8NPoTKw/viewform?usp=sharing&ouid=112901862161680664031"
@@ -235,21 +240,21 @@ const cronograma = [
             <span>Encuentro de Innovación y Creadores de Futuro</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-tight text-white leading-[1.15] font-outfit">
+          <h1 class="text-4xl sm:text-5xl lg:text-[56px] font-black tracking-tight text-slate-900 dark:text-white leading-[1.15] font-outfit transition-colors duration-300">
             El Futuro de la Innovación:<br />
             <span class="text-neon-lime">
               Conecta, Aprende y Transforma
             </span>
           </h1>
 
-          <p class="text-base sm:text-lg text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <p class="text-base sm:text-lg text-slate-650 dark:text-slate-300 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0 transition-colors duration-300">
             ¡Te damos la bienvenida al evento de innovación y tecnología más dinámico del macrosur! Diseñamos este espacio para conectar de forma inspiradora a <strong>emprendedores, líderes, empresas y universidades</strong>, facilitando que aprendas sobre IA de negocio, automatización y beneficios fiscales de forma sumamente sencilla y colaborativa.
           </p>
 
           <!-- Quick Metadata Bar -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6 border-y border-slate-900 max-w-xl mx-auto lg:mx-0">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 py-6 border-y border-slate-200 dark:border-slate-900 max-w-xl mx-auto lg:mx-0 transition-colors duration-300">
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-cyan shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-900 dark:border-slate-800 flex items-center justify-center text-neon-cyan shrink-0 transition-colors duration-300">
                 <svg class="w-5 h-5 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
@@ -258,34 +263,34 @@ const cronograma = [
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">Fecha</div>
-                <div class="text-sm font-extrabold text-white">Miér. 1 de Julio, 2026</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider transition-colors duration-300">Fecha</div>
+                <div class="text-sm font-extrabold text-slate-900 dark:text-white transition-colors duration-300">Miér. 1 de Julio, 2026</div>
               </div>
             </div>
             
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-lime shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-900 dark:border-slate-800 flex items-center justify-center text-neon-lime shrink-0 transition-colors duration-300">
                 <svg class="w-5 h-5 text-neon-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">Horario</div>
-                <div class="text-sm font-extrabold text-white">4:00 PM – 8:00 PM</div>
+                <div class="text-[10px] sm:text-xs text-slate-550 dark:text-slate-400 font-bold uppercase tracking-wider transition-colors duration-300">Horario</div>
+                <div class="text-sm font-extrabold text-slate-900 dark:text-white transition-colors duration-300">4:00 PM – 8:00 PM</div>
               </div>
             </div>
 
             <div class="flex items-center space-x-3.5 justify-center lg:justify-start">
-              <div class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-neon-cyan shrink-0">
+              <div class="w-11 h-11 rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-900 dark:border-slate-800 flex items-center justify-center text-neon-cyan shrink-0 transition-colors duration-300">
                 <svg class="w-5 h-5 text-neon-cyan" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider">Lugar</div>
-                <div class="text-sm font-extrabold text-white">Cámara de Comercio - AQP</div>
+                <div class="text-[10px] sm:text-xs text-slate-550 dark:text-slate-400 font-bold uppercase tracking-wider transition-colors duration-300">Lugar</div>
+                <div class="text-sm font-extrabold text-slate-900 dark:text-white transition-colors duration-300">Cámara de Comercio - AQP</div>
               </div>
             </div>
           </div>
@@ -302,7 +307,7 @@ const cronograma = [
             </a>
             <a 
               href="#agenda" 
-              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-slate-900 border border-slate-800 text-slate-350 hover:text-white hover:bg-slate-800 transition-all"
+              class="w-full sm:w-auto inline-flex items-center justify-center px-8 h-14 text-xs font-black uppercase tracking-widest rounded-2xl bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-200 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-350 dark:hover:text-white dark:hover:bg-slate-800 transition-all"
             >
               Ver Programa Oficial
             </a>
@@ -310,135 +315,24 @@ const cronograma = [
 
         </div>
 
-        {/* Right Column: Interactive Event Console */}
+        {/* Right Column: Event Flyer Image with Lightbox Zoom */}
         <div class="lg:col-span-5 relative flex justify-center w-full">
           <!-- Background Glow -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-neon-lime/20 to-neon-cyan/20 rounded-3xl blur-3xl -z-10 opacity-70 animate-pulse-slow"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-neon-lime/20 to-neon-cyan/20 rounded-xl blur-3xl -z-10 opacity-50 dark:opacity-70 animate-pulse-slow"></div>
           
-          <!-- Console Container -->
-          <div class="relative w-full max-w-[420px] bg-[#020b18]/90 backdrop-blur-xl border border-slate-900/60 rounded-3xl p-7 shadow-2xl flex flex-col justify-between overflow-hidden group hover:border-neon-lime/30 transition-all duration-500 min-h-[580px]">
-            
-            <!-- Tech Grid overlay -->
-            <div class="absolute inset-0 bg-[linear-gradient(to_right,#0e716c05_1px,transparent_1px),linear-gradient(to_bottom,#0e716c05_1px,transparent_1px)] bg-[size:14px_24px] pointer-events-none"></div>
-            
-            <!-- Scanning Light Bar Effect -->
-            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-neon-cyan/35 to-transparent animate-[pulse_3s_infinite] pointer-events-none"></div>
-
-            <!-- Console Header -->
-            <div class="flex justify-between items-center z-10 relative border-b border-slate-900/80 pb-4">
-              <div class="flex items-center space-x-2">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                <span class="w-2 h-2 rounded-full bg-emerald-500 absolute"></span>
-                <span class="text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase">Symposium Status: Active</span>
-              </div>
-              <div class="flex items-center space-x-1.5">
-                <span class="text-[9px] font-mono text-slate-500 bg-slate-950/80 border border-slate-850 px-2.5 py-1 rounded-md uppercase tracking-wider">
-                  Console v1.0.4
-                </span>
-                <a 
-                  href={`${import.meta.env.BASE_URL}control-aforo`}
-                  class="text-[9px] font-mono text-slate-500 hover:text-neon-lime bg-slate-950/80 border border-slate-850 hover:border-neon-lime/30 px-2 py-1 rounded-md uppercase tracking-wider transition-all duration-300 flex items-center gap-1 cursor-pointer"
-                  title="Configurar Aforo"
-                >
-                  <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.43l-1.003.828c-.293.241-.438.613-.43.992a7.723 7.723 0 010 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.43l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.991l-1.004-.827a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.28z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  Config
-                </a>
-              </div>
-            </div>
-
-            <!-- Central Content: Dashboard Widget -->
-            <div class="my-5 space-y-6 z-10 relative flex-grow flex flex-col justify-center text-left">
+          <!-- Image Container with Gradient Border Frame -->
+          <div class="relative w-full max-w-[420px] rounded-xl p-[2.5px] bg-gradient-to-tr from-neon-lime/30 to-neon-cyan/30 dark:from-neon-lime/45 dark:to-neon-cyan/45 shadow-2xl transition-all duration-500 group cursor-zoom-in" id="flyer-card-trigger">
+            <div class="relative w-full rounded-[10px] overflow-hidden bg-slate-100 dark:bg-slate-950 flex">
+              <img 
+                src={`${import.meta.env.BASE_URL}flyer.jpg`}
+                alt="Afiche Oficial del Simposio" 
+                class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                width="420"
+                height="580"
+              />
+              <!-- Subtle Inner Vignette Glow -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent pointer-events-none"></div>
               
-              <!-- Section 1: Event Date & Countdown -->
-              <div class="space-y-3">
-                <span class="text-[10px] font-bold text-neon-cyan uppercase tracking-wider block">Cuenta Regresiva para el Evento</span>
-                
-                {/* Countdown Ticker */}
-                <div class="grid grid-cols-4 gap-2.5 text-center">
-                  <div class="bg-slate-950/80 border border-slate-900/60 rounded-xl p-2.5 shadow-inner">
-                    <div id="countdown-days" class="text-xl sm:text-2xl font-black text-white font-mono">00</div>
-                    <div class="text-[8px] text-slate-500 font-bold uppercase tracking-wide mt-0.5">Días</div>
-                  </div>
-                  <div class="bg-slate-950/80 border border-slate-900/60 rounded-xl p-2.5 shadow-inner">
-                    <div id="countdown-hours" class="text-xl sm:text-2xl font-black text-white font-mono">00</div>
-                    <div class="text-[8px] text-slate-500 font-bold uppercase tracking-wide mt-0.5">Horas</div>
-                  </div>
-                  <div class="bg-slate-950/80 border border-slate-900/60 rounded-xl p-2.5 shadow-inner">
-                    <div id="countdown-minutes" class="text-xl sm:text-2xl font-black text-white font-mono">00</div>
-                    <div class="text-[8px] text-slate-500 font-bold uppercase tracking-wide mt-0.5">Min</div>
-                  </div>
-                  <div class="bg-slate-950/80 border border-slate-900/60 rounded-xl p-2.5 shadow-inner animate-[pulse_2s_infinite]">
-                    <div id="countdown-seconds" class="text-xl sm:text-2xl font-black text-neon-lime font-mono">00</div>
-                    <div class="text-[8px] text-slate-500 font-bold uppercase tracking-wide mt-0.5">Seg</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Section 2: Real-time Capacity Meter -->
-              <div class="space-y-3 bg-slate-950/40 border border-slate-900/60 rounded-2xl p-4 shadow-inner">
-                <div class="flex justify-between items-center text-xs">
-                  <span class="font-bold text-slate-300">Aforo Presencial CCIA</span>
-                  <span id="aforo-percentage" class="font-bold text-neon-lime uppercase tracking-wide text-[10px]">88% Completado</span>
-                </div>
-                
-                {/* Progress Bar */}
-                <div class="w-full h-2.5 bg-slate-900/85 rounded-full overflow-hidden border border-slate-800/80">
-                  <div id="aforo-bar" class="h-full bg-gradient-to-r from-neon-lime to-neon-cyan rounded-full transition-all duration-300 shadow-md" style="width: 88%;"></div>
-                </div>
-
-                <div class="flex justify-between items-center text-[10px] text-slate-400 font-medium">
-                  <div class="flex items-center space-x-1.5 bg-slate-950/80 border border-slate-900/80 px-2.5 py-1 rounded-lg select-none">
-                    <span id="aforo-count" class="font-mono font-bold text-white text-[11px] w-6 text-center">88</span>
-                    <span class="text-slate-500 text-[10px]">/ 100</span>
-                  </div>
-                  <span id="aforo-status-msg" class="text-neon-cyan font-bold animate-[pulse_1.5s_infinite]">¡Últimos 12 Cupos Libres!</span>
-                </div>
-              </div>
-
-              <!-- Section 3: Event Features Grid -->
-              <div class="space-y-3">
-                <span class="text-[10px] font-bold text-neon-cyan uppercase tracking-wider block">Estadísticas Clave del Simposio</span>
-                
-                <div class="grid grid-cols-3 gap-2">
-                  <div class="bg-slate-950/70 border border-slate-900/60 rounded-xl p-2.5 text-center flex flex-col justify-center">
-                    <span class="text-base font-black text-white font-outfit">100+</span>
-                    <span class="text-[8px] text-slate-400 font-bold uppercase tracking-tight mt-0.5 leading-snug">Líderes de Empresa</span>
-                  </div>
-                  <div class="bg-slate-950/70 border border-slate-900/60 rounded-xl p-2.5 text-center flex flex-col justify-center">
-                    <span class="text-base font-black text-neon-cyan font-outfit">3+</span>
-                    <span class="text-[8px] text-slate-400 font-bold uppercase tracking-tight mt-0.5 leading-snug">Ponentes Internac.</span>
-                  </div>
-                  <div class="bg-slate-950/70 border border-slate-900/60 rounded-xl p-2.5 text-center flex flex-col justify-center">
-                    <span class="text-xs sm:text-sm font-black text-neon-lime font-outfit uppercase">Gratuito</span>
-                    <span class="text-[8px] text-slate-400 font-bold uppercase tracking-tight mt-1 leading-snug">Certificado Incluido</span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Footer Console Content -->
-            <div class="border-t border-slate-900/80 pt-4 text-center space-y-3.5">
-              <!-- CTA inside pass -->
-              <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfJX4mCbyTkkZm51t277jsRH-C06sZ8TK594r3OtW_8NPoTKw/viewform?usp=sharing&ouid=112901862161680664031"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full inline-flex items-center justify-center h-12 text-xs font-black uppercase tracking-widest rounded-xl bg-gradient-to-r from-neon-lime to-neon-cyan text-black hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-cyan-950/40 font-black"
-              >
-                Postular al Aforo Presencial ↗
-              </a>
-              <!-- Slogan -->
-              <p class="text-[10px] text-slate-500 font-medium tracking-wide">
-                * Las vacantes presenciales se asignan por orden de postulación.
-              </p>
-            </div>
-
-          </div>
-        </div>
 
       </div>
     </div>
@@ -805,6 +699,26 @@ const cronograma = [
 
     </div>
   </footer>
+  <!-- Premium Lightbox Modal for Flyer Zoom (iStock Style) -->
+  <div id="flyer-lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-slate-950/85 backdrop-blur-md opacity-0 transition-opacity duration-300 pointer-events-none">
+    <div class="absolute inset-0 cursor-zoom-out" id="lightbox-backdrop" aria-label="Cerrar vista ampliada"></div>
+    
+    <!-- Close Button ([x] at top right of viewport, similar to iStock) -->
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 border border-white/10 rounded-full w-12 h-12 flex items-center justify-center text-2xl transition-all duration-300 hover:rotate-90 shadow-lg cursor-pointer z-50" aria-label="Cerrar">
+      &times;
+    </button>
+    
+    <!-- Image Wrapper with Gradient Border Frame matching original flyer aspect -->
+    <div class="relative max-w-[90vw] max-h-[85vh] rounded-2xl p-[3px] bg-gradient-to-tr from-neon-lime to-neon-cyan shadow-2xl scale-95 transition-transform duration-300 z-10" id="lightbox-content">
+      <div class="rounded-[13px] overflow-hidden bg-slate-100 dark:bg-slate-950 flex max-h-[85vh]">
+        <img 
+          src={`${import.meta.env.BASE_URL}flyer.jpg`}
+          alt="Afiche del Simposio en Alta Resolución" 
+          class="max-w-full max-h-[83vh] object-contain rounded-[13px]"
+        />
+      </div>
+    </div>
+  </div>
 
 </Layout>
 
@@ -922,6 +836,56 @@ const cronograma = [
     window.addEventListener('storage', (e) => {
       if (e.key === 'aforo_presencial') {
         updateAforo(e.newValue || 88);
+      }
+    });
+  })();
+
+  // Lightbox Modal logic for Flyer zoom
+  (function() {
+    const trigger = document.getElementById('flyer-card-trigger');
+    const lightbox = document.getElementById('flyer-lightbox');
+    const backdrop = document.getElementById('lightbox-backdrop');
+    const closeBtn = document.getElementById('lightbox-close');
+    const content = document.getElementById('lightbox-content');
+
+    if (!trigger || !lightbox || !backdrop || !closeBtn || !content) return;
+
+    const openLightbox = () => {
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      // Trigger reflow to apply transitions
+      void lightbox.offsetWidth;
+      lightbox.classList.remove('opacity-0', 'pointer-events-none');
+      lightbox.classList.add('opacity-100', 'pointer-events-auto');
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+      document.body.classList.add('overflow-hidden');
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove('opacity-100', 'pointer-events-auto');
+      lightbox.classList.add('opacity-0', 'pointer-events-none');
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+      document.body.classList.remove('overflow-hidden');
+      
+      // Hide container after transition ends
+      setTimeout(() => {
+        if (lightbox.classList.contains('opacity-0')) {
+          lightbox.classList.remove('flex');
+          lightbox.classList.add('hidden');
+        }
+      }, 300);
+    };
+
+    trigger.addEventListener('click', openLightbox);
+    backdrop.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', closeLightbox);
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
       }
     });
   })();
