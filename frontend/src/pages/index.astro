@@ -332,8 +332,9 @@ const cronograma = [
               />
               <!-- Subtle Inner Vignette Glow -->
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent pointer-events-none"></div>
-              
-
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -342,13 +343,13 @@ const cronograma = [
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
       <div class="text-center space-y-4 mb-16">
-        <span class="text-xs font-bold text-cyan-400 bg-cyan-950/50 border border-cyan-850 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-wider">
+        <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 bg-cyan-100/70 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-850 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-wider transition-colors duration-300">
           Cronograma de Alto Impacto
         </span>
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-outfit">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight font-outfit transition-colors duration-300">
           Programa Oficial del Evento
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base font-medium max-w-xl mx-auto leading-relaxed">
+        <p class="text-slate-655 dark:text-slate-300 text-sm sm:text-base font-medium max-w-xl mx-auto leading-relaxed transition-colors duration-300">
           Sesiones continuas de 4 horas diseñadas meticulosamente para mantener la máxima atención y brindar valor neto al asistente.
         </p>
       </div>
@@ -359,17 +360,17 @@ const cronograma = [
         <div class="space-y-6 flex flex-col h-full">
           <div class="flex flex-col space-y-1 text-left border-l-2 border-neon-lime pl-4 mb-2">
             <span class="text-[10px] font-bold uppercase tracking-wider text-neon-lime/90 font-mono">Fase Inicial</span>
-            <h3 class="text-base font-extrabold text-white font-outfit tracking-tight uppercase">Bloque 1: Apertura & IA</h3>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white font-outfit tracking-tight uppercase transition-colors duration-300">Bloque 1: Apertura & IA</h3>
           </div>
           
           <div class="space-y-4 flex-grow flex flex-col justify-between">
             {cronograma.slice(0, 4).map((item) => (
-              <div class="group relative bg-[#020b18]/40 backdrop-blur-md border border-slate-900/80 rounded-2xl p-5.5 hover:bg-[#020b18]/70 hover:-translate-y-0.5 transition-all duration-300 shadow-md text-left flex flex-col justify-between hover:border-neon-lime/30 hover:shadow-[0_0_25px_-5px_rgba(14,113,108,0.2)]">
+              <div class="group relative bg-white/80 dark:bg-[#020b18]/40 backdrop-blur-md border border-slate-200 dark:border-slate-900/80 rounded-2xl p-5.5 hover:bg-white dark:hover:bg-[#020b18]/70 hover:-translate-y-0.5 transition-all duration-300 shadow-md text-left flex flex-col justify-between hover:border-neon-lime/30 hover:shadow-[0_0_25px_-5px_rgba(14,113,108,0.2)]">
                 
                 <div class="space-y-3">
                   <!-- Header: Time -->
                   <div class="flex items-center justify-between gap-3">
-                    <span class="text-xs font-semibold font-mono text-slate-200 bg-slate-950/80 border border-slate-850 px-3 py-1 rounded-md shadow-inner">
+                    <span class="text-xs font-semibold font-mono text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850 px-3 py-1 rounded-md shadow-inner transition-colors duration-300">
                       {item.time}
                     </span>
                   </div>
@@ -377,26 +378,26 @@ const cronograma = [
                   <!-- Title -->
                   <div class="flex items-start gap-2.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-neon-lime shrink-0 mt-1.5 group-hover:scale-125 transition-transform duration-300"></span>
-                    <h4 class="text-sm sm:text-base font-extrabold text-white tracking-tight font-outfit leading-snug group-hover:text-neon-lime transition-colors duration-300">
+                    <h4 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white tracking-tight font-outfit leading-snug group-hover:text-neon-lime transition-colors duration-300">
                       {item.title}
                     </h4>
                   </div>
                   
                   <!-- Detail -->
                   {item.detail && (
-                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">
+                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-medium transition-colors duration-300">
                       {item.detail}
                     </p>
                   )}
                   
                   <!-- Panelists -->
                   {item.speakers && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 space-y-2">
-                      <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Panelistas:</span>
-                      <ul class="space-y-1.5 text-xs sm:text-[13px] text-slate-200">
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 space-y-2 transition-colors duration-300">
+                      <span class="text-[10px] uppercase tracking-wider text-slate-550 dark:text-slate-400 font-bold block transition-colors duration-300">Panelistas:</span>
+                      <ul class="space-y-1.5 text-xs sm:text-[13px] text-slate-750 dark:text-slate-200">
                         {item.speakers.map(speaker => (
                           <li class="flex items-start gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-neon-lime shrink-0 mt-1.5"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-neon-lime shrink-0 mt-1.5"></span>
                             <span class="font-medium leading-tight">{speaker}</span>
                           </li>
                         ))}
@@ -406,9 +407,9 @@ const cronograma = [
 
                   {/* Single Speaker */}
                   {item.speaker && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 flex items-center justify-between gap-2">
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 flex items-center justify-between gap-2 transition-colors duration-300">
                       <div>
-                        <p class="text-xs sm:text-sm text-slate-200 font-bold leading-tight">{item.speaker}</p>
+                        <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold leading-tight transition-colors duration-300">{item.speaker}</p>
                         {item.organizer && (
                           <p class="text-[10px] text-neon-lime/90 font-bold uppercase tracking-wider mt-1">{item.organizer}</p>
                         )}
@@ -418,9 +419,9 @@ const cronograma = [
 
                   {/* Moderator */}
                   {item.moderator && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 text-xs flex items-center gap-1.5">
-                      <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Modera:</span>
-                      <span class="font-medium text-slate-200">{item.moderator}</span>
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 text-xs flex items-center gap-1.5 transition-colors duration-300">
+                      <span class="text-[10px] uppercase tracking-wider text-slate-550 dark:text-slate-400 font-bold transition-colors duration-300">Modera:</span>
+                      <span class="font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300">{item.moderator}</span>
                     </div>
                   )}
 
@@ -434,17 +435,17 @@ const cronograma = [
         <div class="space-y-6 flex flex-col h-full">
           <div class="flex flex-col space-y-1 text-left border-l-2 border-neon-cyan pl-4 mb-2">
             <span class="text-[10px] font-bold uppercase tracking-wider text-neon-cyan/90 font-mono">Fase de Escalamiento</span>
-            <h3 class="text-base font-extrabold text-white font-outfit tracking-tight uppercase">Bloque 2: Rentabilidad</h3>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white font-outfit tracking-tight uppercase transition-colors duration-300">Bloque 2: Rentabilidad</h3>
           </div>
           
           <div class="space-y-4 flex-grow flex flex-col justify-between">
             {cronograma.slice(4, 7).map((item) => (
-              <div class="group relative bg-[#020b18]/40 backdrop-blur-md border border-slate-900/80 rounded-2xl p-5.5 hover:bg-[#020b18]/70 hover:-translate-y-0.5 transition-all duration-300 shadow-md text-left flex flex-col justify-between hover:border-neon-cyan/30 hover:shadow-[0_0_25px_-5px_rgba(20,163,155,0.2)]">
+              <div class="group relative bg-white/80 dark:bg-[#020b18]/40 backdrop-blur-md border border-slate-200 dark:border-slate-900/80 rounded-2xl p-5.5 hover:bg-white dark:hover:bg-[#020b18]/70 hover:-translate-y-0.5 transition-all duration-300 shadow-md text-left flex flex-col justify-between hover:border-neon-cyan/30 hover:shadow-[0_0_25px_-5px_rgba(20,163,155,0.2)]">
                 
                 <div class="space-y-3">
                   <!-- Header: Time -->
                   <div class="flex items-center justify-between gap-3">
-                    <span class="text-xs font-semibold font-mono text-slate-200 bg-slate-950/80 border border-slate-850 px-3 py-1 rounded-md shadow-inner">
+                    <span class="text-xs font-semibold font-mono text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-850 px-3 py-1 rounded-md shadow-inner transition-colors duration-300">
                       {item.time}
                     </span>
                   </div>
@@ -452,26 +453,26 @@ const cronograma = [
                   <!-- Title -->
                   <div class="flex items-start gap-2.5">
                     <span class="w-1.5 h-1.5 rounded-full bg-neon-cyan shrink-0 mt-1.5 group-hover:scale-125 transition-transform duration-300"></span>
-                    <h4 class="text-sm sm:text-base font-extrabold text-white tracking-tight font-outfit leading-snug group-hover:text-neon-cyan transition-colors duration-300">
+                    <h4 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white tracking-tight font-outfit leading-snug group-hover:text-neon-cyan transition-colors duration-300">
                       {item.title}
                     </h4>
                   </div>
                   
                   <!-- Detail -->
                   {item.detail && (
-                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed font-medium">
+                    <p class="text-slate-600 dark:text-slate-300 text-xs sm:text-sm leading-relaxed font-medium transition-colors duration-300">
                       {item.detail}
                     </p>
                   )}
                   
                   <!-- Panelists -->
                   {item.speakers && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 space-y-2">
-                      <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Panelistas:</span>
-                      <ul class="space-y-1.5 text-xs sm:text-[13px] text-slate-200">
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 space-y-2 transition-colors duration-300">
+                      <span class="text-[10px] uppercase tracking-wider text-slate-550 dark:text-slate-400 font-bold block transition-colors duration-300">Panelistas:</span>
+                      <ul class="space-y-1.5 text-xs sm:text-[13px] text-slate-750 dark:text-slate-200">
                         {item.speakers.map(speaker => (
                           <li class="flex items-start gap-2.5">
-                            <span class="w-1 h-1 rounded-full bg-neon-cyan shrink-0 mt-1.5"></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-neon-cyan shrink-0 mt-1.5"></span>
                             <span class="font-medium leading-tight">{speaker}</span>
                           </li>
                         ))}
@@ -481,9 +482,9 @@ const cronograma = [
 
                   {/* Single Speaker */}
                   {item.speaker && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 flex items-center justify-between gap-2">
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 flex items-center justify-between gap-2 transition-colors duration-300">
                       <div>
-                        <p class="text-xs sm:text-sm text-slate-200 font-bold leading-tight">{item.speaker}</p>
+                        <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold leading-tight transition-colors duration-300">{item.speaker}</p>
                         {item.organizer && (
                           <p class="text-[10px] text-neon-cyan/90 font-bold uppercase tracking-wider mt-1">{item.organizer}</p>
                         )}
@@ -493,9 +494,9 @@ const cronograma = [
 
                   {/* Moderator */}
                   {item.moderator && (
-                    <div class="mt-3 pt-2.5 border-t border-slate-850/60 text-xs flex items-center gap-1.5">
-                      <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Modera:</span>
-                      <span class="font-medium text-slate-200">{item.moderator}</span>
+                    <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-850/60 text-xs flex items-center gap-1.5 transition-colors duration-300">
+                      <span class="text-[10px] uppercase tracking-wider text-slate-550 dark:text-slate-400 font-bold transition-colors duration-300">Modera:</span>
+                      <span class="font-medium text-slate-700 dark:text-slate-200 transition-colors duration-300">{item.moderator}</span>
                     </div>
                   )}
 
@@ -509,34 +510,34 @@ const cronograma = [
         <div class="space-y-6 flex flex-col h-full md:col-span-2 lg:col-span-1">
           <div class="flex flex-col space-y-1 text-left border-l-2 border-purple-500 pl-4 mb-2">
             <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">Conexión Final</span>
-            <h3 class="text-base font-extrabold text-white font-outfit tracking-tight uppercase">Bloque 3: Cóctel & Cierre</h3>
+            <h3 class="text-base font-extrabold text-slate-900 dark:text-white font-outfit tracking-tight uppercase transition-colors duration-300">Bloque 3: Cóctel & Cierre</h3>
           </div>
           
           <div class="flex-grow flex">
             {cronograma.slice(7).map((item) => (
-              <div class="group relative border border-purple-500/15 bg-gradient-to-b from-purple-950/5 via-[#020b18]/40 to-[#020b18]/90 hover:border-purple-500/35 hover:shadow-[0_0_35px_-5px_rgba(168,85,247,0.25)] rounded-2xl p-6 transition-all duration-300 text-center flex flex-col justify-center items-center h-full flex-grow w-full">
+              <div class="group relative border border-purple-200 dark:border-purple-500/15 bg-gradient-to-b from-purple-50/50 via-white to-slate-50/80 dark:from-purple-950/5 dark:via-[#020b18]/40 dark:to-[#020b18]/90 hover:border-purple-500/35 hover:shadow-[0_0_35px_-5px_rgba(168,85,247,0.25)] rounded-2xl p-6 transition-all duration-300 text-center flex flex-col justify-center items-center h-full flex-grow w-full shadow-lg dark:shadow-none">
                 
-                <span class="text-xs font-semibold font-mono text-purple-300 bg-purple-950/60 border border-purple-900/40 rounded-full px-4.5 py-1.5 w-max mx-auto shadow-inner mb-8">
+                <span class="text-xs font-semibold font-mono text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-900/40 rounded-full px-4.5 py-1.5 w-max mx-auto shadow-inner mb-8 transition-colors duration-300">
                   {item.time}
                 </span>
 
                 <!-- Copas SVG Icon (Wine/Champagne clinking) -->
-                <svg class="w-8 h-8 text-purple-350 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-8 h-8 text-purple-650 dark:text-purple-350 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M6 18h4M8 18v3M9 14c0 2.2-1.8 4-4 4s-4-1.8-4-4V3h8v11z" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M18 18h-4M16 18v3M15 14c0 2.2 1.8 4 4 4s4-1.8 4-4V3h-8v11z" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M12 2v2M10 5l1.5 1.5M14 5L12.5 6.5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 
-                <h4 class="text-base sm:text-lg font-extrabold tracking-wide font-outfit uppercase text-purple-300 max-w-[220px] mx-auto leading-tight mb-4 group-hover:scale-[1.02] transition-transform duration-300">
+                <h4 class="text-base sm:text-lg font-outfit font-black uppercase text-purple-800 dark:text-purple-300 max-w-[220px] mx-auto leading-tight mb-4 group-hover:scale-[1.02] transition-colors duration-300">
                   {item.title}
                 </h4>
                 
-                <p class="text-slate-200 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto font-medium px-4">
+                <p class="text-slate-650 dark:text-slate-200 text-xs sm:text-sm leading-relaxed max-w-sm mx-auto font-medium px-4 transition-colors duration-300">
                   {item.detail}
                 </p>
                 
-                <div class="mt-8 pt-6 border-t border-purple-900/25 w-full max-w-[220px] mx-auto flex flex-col items-center space-y-1.5">
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-purple-300">Espacio de Alianzas</span>
+                <div class="mt-8 pt-6 border-t border-purple-200 dark:border-purple-900/25 w-full max-w-[220px] mx-auto flex flex-col items-center space-y-1.5 transition-colors duration-300">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-300 transition-colors duration-300">Espacio de Alianzas</span>
                 </div>
 
               </div>
@@ -549,15 +550,15 @@ const cronograma = [
   </section>
 
   <!-- Section: Próximamente (El Futuro del Simposio) -->
-  <section id="proximamente" class="py-24 bg-slate-950/60 border-t border-b border-slate-900 relative">
+  <section id="proximamente" class="py-24 bg-slate-50 dark:bg-slate-950/60 border-t border-b border-slate-200 dark:border-slate-900 relative transition-colors duration-300">
     <div class="absolute inset-0 bg-gradient-to-b from-neon-cyan/5 to-transparent pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
       <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight font-outfit">
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight font-outfit transition-colors duration-300">
           Lo Que Se Viene en el Futuro del Simposio
         </h2>
-        <p class="text-slate-300 text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed">
+        <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-medium max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
           Estamos preparando los detalles finales de las siguientes fases de este encuentro tecnológico. Conoce un adelanto de lo que se presentará próximamente.
         </p>
       </div>
@@ -566,7 +567,7 @@ const cronograma = [
         <!-- Card 1: Nuestro Propósito y Alianza Regional -->
         <div class="relative group/card">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-lime/10 to-transparent rounded-2xl blur opacity-25 group-hover/card:opacity-40 transition duration-500"></div>
-          <div class="relative bg-slate-900/40 backdrop-blur-md border border-slate-800/80 rounded-2xl p-8 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
+          <div class="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-2xl p-8 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
             <div class="space-y-4">
               <div class="w-12 h-12 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center text-neon-lime font-outfit">
                 <svg class="w-6 h-6 text-neon-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
@@ -576,14 +577,14 @@ const cronograma = [
                   <path d="M16 3.13a4 4 0 010 7.75" />
                 </svg>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white leading-snug font-outfit">
+              <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-outfit transition-colors duration-300">
                 Alianza y Sinergia Regional
               </h3>
-              <p class="text-slate-300 text-sm leading-relaxed font-medium">
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-medium transition-colors duration-300">
                 Consolidaremos la vinculación entre la academia (UNSA, UCSM, UCSP, UPT, UNAM) y el Gobierno Regional (GORE) para transferir tecnología de punta y crear empleo directo en el macrosur.
               </p>
             </div>
-            <div class="pt-4 border-t border-slate-850/60">
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-850/60 transition-colors duration-300">
               <span class="text-[10px] font-bold uppercase tracking-wider text-neon-lime bg-neon-lime/10 px-3 py-1 rounded">Fase de Articulación</span>
             </div>
           </div>
@@ -592,21 +593,21 @@ const cronograma = [
         <!-- Card 2: Ejes Temáticos de Alto Impacto -->
         <div class="relative group/card">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-lime/10 to-transparent rounded-2xl blur opacity-25 group-hover/card:opacity-40 transition duration-500"></div>
-          <div class="relative bg-slate-900/40 backdrop-blur-md border border-slate-800/80 rounded-2xl p-8 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
+          <div class="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-2xl p-8 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
             <div class="space-y-4">
               <div class="w-12 h-12 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center text-neon-lime font-outfit">
                 <svg class="w-6 h-6 text-neon-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white leading-snug font-outfit">
+              <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-outfit transition-colors duration-300">
                 Ejes de Competitividad e IA
               </h3>
-              <p class="text-slate-300 text-sm leading-relaxed font-medium">
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-medium transition-colors duration-300">
                 Revelaremos marcos metodológicos aplicados a la rentabilidad directiva, optimización de costos mediante inteligencia artificial, automatizaciones comerciales y beneficios tributarios locales.
               </p>
             </div>
-            <div class="pt-4 border-t border-slate-850/60">
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-850/60 transition-colors duration-300">
               <span class="text-[10px] font-bold uppercase tracking-wider text-neon-lime bg-neon-lime/10 px-3 py-1 rounded">Fase de Contenido</span>
             </div>
           </div>
@@ -615,7 +616,7 @@ const cronograma = [
         <!-- Card 3: Cuerpo de Ponentes Internacionales -->
         <div class="relative group/card">
           <div class="absolute -inset-0.5 bg-gradient-to-r from-neon-lime/10 to-transparent rounded-2xl blur opacity-25 group-hover/card:opacity-40 transition duration-500"></div>
-          <div class="relative bg-slate-900/40 backdrop-blur-md border border-slate-800/80 rounded-2xl p-8 hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
+          <div class="relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md border border-slate-200 dark:border-slate-800/80 rounded-2xl p-8 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 flex flex-col justify-between space-y-6 text-left h-full shadow-lg">
             <div class="space-y-4">
               <div class="w-12 h-12 rounded-xl bg-neon-lime/10 border border-neon-lime/20 flex items-center justify-center text-neon-lime font-outfit">
                 <svg class="w-6 h-6 text-neon-lime" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
@@ -623,14 +624,14 @@ const cronograma = [
                   <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" />
                 </svg>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold text-white leading-snug font-outfit">
+              <h3 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug font-outfit transition-colors duration-300">
                 Ponentes y Expertos Globales
               </h3>
-              <p class="text-slate-300 text-sm leading-relaxed font-medium">
+              <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-medium transition-colors duration-300">
                 Presentaremos un selecto cuerpo docente y expertos provenientes de organizaciones líderes a nivel internacional y nacional, especializados en innovación aplicada y CTI.
               </p>
             </div>
-            <div class="pt-4 border-t border-slate-850/60">
+            <div class="pt-4 border-t border-slate-200 dark:border-slate-850/60 transition-colors duration-300">
               <span class="text-[10px] font-bold uppercase tracking-wider text-neon-lime bg-neon-lime/10 px-3 py-1 rounded">Fase de Ponentes</span>
             </div>
           </div>
@@ -643,14 +644,14 @@ const cronograma = [
 
 
   <!-- Interactive Component: FAQ -->
-  <section id="faq" class="py-24 bg-slate-950/60 border-t border-slate-900 relative">
+  <section id="faq" class="py-24 bg-slate-50 dark:bg-slate-950/60 border-t border-slate-200 dark:border-slate-900 relative transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       
       <div class="text-center space-y-4 mb-16">
-        <span class="text-xs font-bold text-violet-400 bg-violet-950/50 border border-violet-850 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-wider">
+        <span class="text-xs font-bold text-violet-600 dark:text-violet-400 bg-violet-100/70 dark:bg-violet-950/50 border border-violet-200 dark:border-violet-850 rounded-md px-3.5 py-1.5 w-max mx-auto block uppercase tracking-wider transition-colors duration-300">
           Preguntas e Información Adicional
         </span>
-        <h2 class="text-3xl font-black text-white tracking-tight font-outfit">
+        <h2 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight font-outfit transition-colors duration-300">
           Resolviendo sus Inquietudes
         </h2>
       </div>
